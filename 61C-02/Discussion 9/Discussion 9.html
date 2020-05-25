@@ -1,0 +1,1600 @@
+
+<!-- saved from url=(0055)http://www.cs.berkeley.edu/~jaein/cs61c/discussion9.htm -->
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:p="urn:schemas-microsoft-com:office:powerpoint" xmlns:oa="urn:schemas-microsoft-com:office:activation" xmlns:st1="urn:schemas-microsoft-com:office:smarttags" xmlns="http://www.w3.org/TR/REC-html40"><script type="text/javascript" src="chrome-extension://kajfghlhfkcocafkcjlajldicbikpgnp/catcher.js"><!-- script injected by Request Maker --></script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 10">
+<meta name="Originator" content="Microsoft Word 10">
+<link rel="File-List" href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion9_files/filelist.xml">
+<link rel="Edit-Time-Data" href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion9_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Discussion 9</title>
+<style type="text/css"></style></head><body lang="KO" link="blue" vlink="blue" style="tab-interval:42.55pt"><o:smarttagtype namespaceuri="urn:schemas-microsoft-com:office:smarttags" name="date">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Jaein Jeong</o:Author>
+  <o:LastAuthor>Jaein Jeong</o:LastAuthor>
+  <o:Revision>7</o:Revision>
+  <o:TotalTime>634</o:TotalTime>
+  <o:Created>2002-10-20T19:40:00Z</o:Created>
+  <o:LastSaved>2002-10-21T00:20:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>620</o:Words>
+  <o:Characters>3540</o:Characters>
+  <o:Company>UC Berkeley</o:Company>
+  <o:Lines>29</o:Lines>
+  <o:Paragraphs>8</o:Paragraphs>
+  <o:CharactersWithSpaces>4152</o:CharactersWithSpaces>
+  <o:Version>10.3501</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:Compatibility>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536885895 0 0 0 511 0;}
+@font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:Batang;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:Gulim;
+	panose-1:2 11 6 0 0 1 1 1 1 1;
+	mso-font-alt:Gulim;
+	mso-font-charset:129;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:Gulim;
+	panose-1:2 11 6 0 0 1 1 1 1 1;
+	mso-font-charset:129;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:Batang;
+	mso-bidi-font-family:"Times New Roman";}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h3
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h4
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h5
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:Batang;
+	mso-bidi-font-family:"Times New Roman";}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:Batang;
+	mso-bidi-font-family:"Courier New";}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:99.25pt 85.05pt 85.05pt 85.05pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1281182205;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2087507040 991064566 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-tab-stop:38.0pt;
+	mso-level-number-position:left;
+	margin-left:38.0pt;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+
+
+
+
+<div class="Section1">
+
+<h2><a name="top"><span lang="EN-US">Discussion </span></a><span lang="EN-US">9</span></h2>
+
+<p><st1:date year="2002" day="22" month="10"><span lang="EN-US">10/22/02</span></st1:date><span lang="EN-US"> Tue</span></p>
+
+<div class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US">
+
+<hr size="2" width="100%" align="center">
+
+</span></div>
+
+<h3><span lang="EN-US">Disk</span></h3>
+
+<p><span lang="EN-US">A computer has a hierarch of storage from register to
+tapes. In the memory hiearchy, disk provides the non-volatile storage and
+reasonable cost/MB and access time. </span></p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0">
+  <td width="83" valign="top" style="width:62.6pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width="96" valign="top" style="width:1.0in;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Access Time</span></p>
+  </td>
+  <td width="84" valign="top" style="width:63.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Cost/MB</span></p>
+  </td>
+  <td width="108" valign="top" style="width:81.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Volatile?</span></p>
+  </td>
+  <td width="164" valign="top" style="width:123.35pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Where is data stored?</span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="83" valign="top" style="width:62.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Register</span></p>
+  </td>
+  <td width="96" valign="top" style="width:1.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Fastest</span></p>
+  </td>
+  <td width="84" valign="top" style="width:63.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Highest</span></p>
+  </td>
+  <td width="108" valign="top" style="width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Volatile</span></p>
+  </td>
+  <td width="164" valign="top" style="width:123.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Flip-flop</span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="83" valign="top" style="width:62.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Cache</span></p>
+  </td>
+  <td width="96" valign="top" style="width:1.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width="84" valign="top" style="width:63.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width="108" valign="top" style="width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Volatile</span></p>
+  </td>
+  <td width="164" valign="top" style="width:123.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">SRAM</span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3">
+  <td width="83" valign="top" style="width:62.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Memory</span></p>
+  </td>
+  <td width="96" valign="top" style="width:1.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width="84" valign="top" style="width:63.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width="108" valign="top" style="width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Volatile</span></p>
+  </td>
+  <td width="164" valign="top" style="width:123.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">DRAM</span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4">
+  <td width="83" valign="top" style="width:62.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Disks</span></p>
+  </td>
+  <td width="96" valign="top" style="width:1.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width="84" valign="top" style="width:63.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width="108" valign="top" style="width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Non-volatile</span></p>
+  </td>
+  <td width="164" valign="top" style="width:123.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Ferromagnetic platter</span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:5;mso-yfti-lastrow:yes">
+  <td width="83" valign="top" style="width:62.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Tapes</span></p>
+  </td>
+  <td width="96" valign="top" style="width:1.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Slowest</span></p>
+  </td>
+  <td width="84" valign="top" style="width:63.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Lowest</span></p>
+  </td>
+  <td width="108" valign="top" style="width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Non-volatile</span></p>
+  </td>
+  <td width="164" valign="top" style="width:123.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Ferromagnetic tape</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p><span lang="EN-US">A disk consists of ferroelectric platters, a moving arm and
+the headers. The headers read and write bits by using the induced magnetic
+field and current.</span></p>
+
+<p><span lang="EN-US">The disk access time can be calculated as follows:</span></p>
+
+<p><span lang="EN-US">Disk latency = average seek time + average rotational delay
++ transfer time + controller overhead.</span></p>
+
+<p><span lang="EN-US">Where seek time is the time to move heads to the right
+cylinder. Rotational delay is the time to wait before the header reads a
+sector.</span></p>
+
+<p><span lang="EN-US">In terms of performance, we are interested in capacity,
+transfer rate, rotation/seek time and MB/$. Capacity and MB/$ increases pretty
+fast (2x/1.0year), but rotation and seek time increases pretty slow (1/2 in 10
+years).</span></p>
+
+<h3><span lang="EN-US">Network</span></h3>
+
+<p><span lang="EN-US">How is a message transmitted over the network?</span></p>
+
+<p style="margin-left:38.0pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+tab-stops:list 38.0pt"><!--[if !supportLists]--><span lang="EN-US" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;"><span style="mso-list:Ignore">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span lang="EN-US">Application copies data to OS
+buffer. (sender overhead)</span></p>
+
+<p style="margin-left:38.0pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+tab-stops:list 38.0pt"><!--[if !supportLists]--><span lang="EN-US" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;"><span style="mso-list:Ignore">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span lang="EN-US">OS calculates checksum and sens
+data to the network interface HW. (sender overhead)</span></p>
+
+<p style="margin-left:38.0pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+tab-stops:list 38.0pt"><!--[if !supportLists]--><span lang="EN-US" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;"><span style="mso-list:Ignore">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span lang="EN-US">Data is transmitted through
+underlying hardware. (transfer time)</span></p>
+
+<p style="margin-left:38.0pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+tab-stops:list 38.0pt"><!--[if !supportLists]--><span lang="EN-US" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;"><span style="mso-list:Ignore">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span lang="EN-US">OS copies data from network
+interface HW to OS buffer. And calculates check sum. (receiver overhead)</span></p>
+
+<p style="margin-left:38.0pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+tab-stops:list 38.0pt"><!--[if !supportLists]--><span lang="EN-US" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;"><span style="mso-list:Ignore">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span lang="EN-US">OS copies data to user address
+space. (receiver overhead)</span></p>
+
+<p><span lang="EN-US">There are some performance factors we can think of.</span></p>
+
+<p><span lang="EN-US">Bandwidth = Transfer Size / transfer time</span></p>
+
+<p><span lang="EN-US">Transfer time = Round trip time + 1/Bandwidth *
+TransferSize</span></p>
+
+<p><span lang="EN-US">Latency = Propagation + Transmit + Overhead (sender and receiver)</span></p>
+
+<h3><span lang="EN-US">What is a logic gate?</span></h3>
+
+<p><span lang="EN-US">A logic gate is a component that computes a function for a
+given digital input.</span></p>
+
+<p><span lang="EN-US">For example,</span></p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="539" style="width:404.6pt;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0">
+  <td width="23" valign="top" style="width:17.55pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">x</span></p>
+  </td>
+  <td width="24" valign="top" style="width:17.95pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">y</span></p>
+  </td>
+  <td width="48" valign="top" style="width:36.3pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">AND</span></p>
+  </td>
+  <td width="112" rowspan="5" valign="top" style="width:84.3pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><!--[if mso & !supportInlineShapes & supportFields]><span lang=EN-US><span
+  style='mso-element:field-begin;mso-field-lock:yes'></span><span
+  style='mso-spacerun:yes'> </span>SHAPE <span
+  style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:
+  field-separator'></span></span><![endif]--><span lang="EN-US"><!--[if gte vml 1]><v:group
+   id="_x0000_s1524" editas="canvas" style='width:72.75pt;height:32.6pt;
+   mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+   coordorigin="4214,806" coordsize="3098,1389">
+   <o:lock v:ext="edit" aspectratio="t"/>
+   <v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75"
+    o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+    <v:stroke joinstyle="miter"/>
+    <v:formulas>
+     <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+     <v:f eqn="sum @0 1 0"/>
+     <v:f eqn="sum 0 0 @1"/>
+     <v:f eqn="prod @2 1 2"/>
+     <v:f eqn="prod @3 21600 pixelWidth"/>
+     <v:f eqn="prod @3 21600 pixelHeight"/>
+     <v:f eqn="sum @0 0 1"/>
+     <v:f eqn="prod @6 1 2"/>
+     <v:f eqn="prod @7 21600 pixelWidth"/>
+     <v:f eqn="sum @8 21600 0"/>
+     <v:f eqn="prod @7 21600 pixelHeight"/>
+     <v:f eqn="sum @10 21600 0"/>
+    </v:formulas>
+    <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+    <o:lock v:ext="edit" aspectratio="t"/>
+   </v:shapetype><v:shape id="_x0000_s1525" type="#_x0000_t75" style='position:absolute;
+    left:4214;top:806;width:3098;height:1389' o:preferrelative="f">
+    <v:fill o:detectmouseclick="t"/>
+    <v:path o:extrusionok="t" o:connecttype="none"/>
+    <o:lock v:ext="edit" text="t"/>
+   </v:shape><v:line id="_x0000_s1526" style='position:absolute' from="6778,1233"
+    to="7312,1233"/>
+   <v:line id="_x0000_s1527" style='position:absolute' from="6778,1768" to="7312,1768"/>
+   <v:line id="_x0000_s1528" style='position:absolute' from="4214,1447" to="4748,1447"/>
+   <v:group id="_x0000_s1529" style='position:absolute;left:4748;top:806;
+    width:2030;height:1389' coordorigin="1104,1632" coordsize="912,624">
+    <v:oval id="_x0000_s1530" style='position:absolute;left:1104;top:1632;
+     width:576;height:624;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+    <v:rect id="_x0000_s1531" style='position:absolute;left:1392;top:1632;
+     width:624;height:624;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+    <v:oval id="_x0000_s1532" style='position:absolute;left:1152;top:1632;
+     width:576;height:624;v-text-anchor:middle' fillcolor="#bbe0e3" stroked="f"/>
+   </v:group><w:wrap type="none"/>
+   <w:anchorlock/>
+  </v:group><![endif]--><!--[if !vml]--><img width="99" height="45" src="./Discussion 9_files/image001.gif" v:shapes="_x0000_s1524 _x0000_s1525 _x0000_s1526 _x0000_s1527 _x0000_s1528 _x0000_s1529 _x0000_s1530 _x0000_s1531 _x0000_s1532"><!--[endif]--></span><!--[if mso & !supportInlineShapes & supportFields]><span
+  lang=EN-US><v:shape id="_x0000_i1033" type="#_x0000_t75" style='width:72.75pt;
+   height:32.6pt'>
+   <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+  </v:shape><span style='mso-element:field-end'></span></span><![endif]--></p>
+  </td>
+  <td width="43" valign="top" style="width:32.2pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">OR</span></p>
+  </td>
+  <td width="120" rowspan="5" valign="top" style="width:89.9pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><!--[if mso & !supportInlineShapes & supportFields]><span lang=EN-US><span
+  style='mso-element:field-begin;mso-field-lock:yes'></span><span
+  style='mso-spacerun:yes'> </span>SHAPE <span
+  style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:
+  field-separator'></span></span><![endif]--><span lang="EN-US"><!--[if gte vml 1]><v:group
+   id="_x0000_s1518" editas="canvas" style='width:75.45pt;height:36.3pt;
+   mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+   coordorigin="4214,806" coordsize="3061,1474">
+   <o:lock v:ext="edit" aspectratio="t"/>
+   <v:shape id="_x0000_s1519" type="#_x0000_t75" style='position:absolute;
+    left:4214;top:806;width:3061;height:1474' o:preferrelative="f">
+    <v:fill o:detectmouseclick="t"/>
+    <v:path o:extrusionok="t" o:connecttype="none"/>
+    <o:lock v:ext="edit" text="t"/>
+   </v:shape><v:shapetype id="_x0000_t184" coordsize="21600,21600" o:spt="184"
+    adj="10800" path="m21600,qx,10800,21600,21600wa@0@10@6@11,21600,21600,21600,xe">
+    <v:stroke joinstyle="miter"/>
+    <v:formulas>
+     <v:f eqn="val #0"/>
+     <v:f eqn="sum 21600 0 #0"/>
+     <v:f eqn="prod #0 #0 @1"/>
+     <v:f eqn="prod 21600 21600 @1"/>
+     <v:f eqn="prod @3 2 1"/>
+     <v:f eqn="sum @4 0 @2"/>
+     <v:f eqn="sum @5 0 #0"/>
+     <v:f eqn="prod @5 1 2"/>
+     <v:f eqn="sum @7 0 #0"/>
+     <v:f eqn="prod @8 1 2"/>
+     <v:f eqn="sum 10800 0 @9"/>
+     <v:f eqn="sum @9 10800 0"/>
+     <v:f eqn="prod #0 9598 32768"/>
+     <v:f eqn="sum 21600 0 @12"/>
+     <v:f eqn="ellipse @13 21600 10800"/>
+     <v:f eqn="sum 10800 0 @14"/>
+     <v:f eqn="sum @14 10800 0"/>
+    </v:formulas>
+    <v:path o:connecttype="custom" o:connectlocs="21600,0;0,10800;21600,21600;@0,10800"
+     o:connectangles="270,180,90,0" textboxrect="@12,@15,@0,@16"/>
+    <v:handles>
+     <v:h position="#0,center" xrange="0,18900"/>
+    </v:handles>
+   </v:shapetype><v:shape id="_x0000_s1520" type="#_x0000_t184" style='position:absolute;
+    left:4781;top:806;width:2041;height:1474;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+   <v:line id="_x0000_s1521" style='position:absolute' from="6255,1033" to="7275,1033"/>
+   <v:line id="_x0000_s1522" style='position:absolute' from="6255,2053" to="7275,2053"/>
+   <v:line id="_x0000_s1523" style='position:absolute' from="4214,1486" to="4781,1486"/>
+   <w:wrap type="none"/>
+   <w:anchorlock/>
+  </v:group><![endif]--><!--[if !vml]--><img width="103" height="50" src="./Discussion 9_files/image002.gif" v:shapes="_x0000_s1518 _x0000_s1519 _x0000_s1520 _x0000_s1521 _x0000_s1522 _x0000_s1523"><!--[endif]--></span><!--[if mso & !supportInlineShapes & supportFields]><span
+  lang=EN-US><v:shape id="_x0000_i1032" type="#_x0000_t75" style='width:75.45pt;
+   height:36.3pt'>
+   <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+  </v:shape><span style='mso-element:field-end'></span></span><![endif]--></p>
+  </td>
+  <td width="37" valign="top" style="width:27.4pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">X<o:p></o:p></span></p>
+  </td>
+  <td width="48" valign="top" style="width:.5in;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">NOT<o:p></o:p></span></p>
+  </td>
+  <td width="84" rowspan="3" valign="top" style="width:63.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><!--[if mso & !supportInlineShapes & supportFields]><span lang=EN-US><span
+  style='mso-element:field-begin;mso-field-lock:yes'></span><span
+  style='mso-spacerun:yes'> </span>SHAPE <span
+  style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:
+  field-separator'></span></span><![endif]--><span lang="EN-US"><!--[if gte vml 1]><v:group
+   id="_x0000_s1533" editas="canvas" style='width:48.75pt;height:27.3pt;
+   mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+   coordorigin="1957,-180" coordsize="12245,6860">
+   <o:lock v:ext="edit" aspectratio="t"/>
+   <v:shape id="_x0000_s1534" type="#_x0000_t75" style='position:absolute;
+    left:1957;top:-180;width:12245;height:6860' o:preferrelative="f">
+    <v:fill o:detectmouseclick="t"/>
+    <v:path o:extrusionok="t" o:connecttype="none"/>
+    <o:lock v:ext="edit" text="t"/>
+   </v:shape><v:group id="_x0000_s1535" style='position:absolute;left:3426;
+    top:-180;width:9307;height:6860' coordorigin="1104,3456" coordsize="912,672">
+    <v:shape id="_x0000_s1536" style='position:absolute;left:1200;top:3456;
+     width:816;height:672' coordsize="816,672" path="m816,l,336,816,672,816,xe"
+     fillcolor="#bbe0e3">
+     <v:path arrowok="t"/>
+    </v:shape><v:oval id="_x0000_s1537" style='position:absolute;left:1104;
+     top:3744;width:96;height:96;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+   </v:group><v:line id="_x0000_s1538" style='position:absolute' from="12733,3250"
+    to="14202,3250"/>
+   <v:line id="_x0000_s1539" style='position:absolute' from="1957,3250" to="3426,3250"/>
+   <w:wrap type="none"/>
+   <w:anchorlock/>
+  </v:group><![endif]--><!--[if !vml]--><img width="67" height="40" src="./Discussion 9_files/image003.gif" v:shapes="_x0000_s1533 _x0000_s1534 _x0000_s1535 _x0000_s1536 _x0000_s1537 _x0000_s1538 _x0000_s1539"><!--[endif]--></span><!--[if mso & !supportInlineShapes & supportFields]><span
+  lang=EN-US><v:shape id="_x0000_i1034" type="#_x0000_t75" style='width:48.75pt;
+   height:27.3pt'>
+   <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+  </v:shape><span style='mso-element:field-end'></span></span><![endif]--></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="23" valign="top" style="width:17.55pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+  <td width="24" valign="top" style="width:17.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+  <td width="48" valign="top" style="width:36.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+  <td width="43" valign="top" style="width:32.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+  <td width="37" valign="top" style="width:27.4pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0<o:p></o:p></span></p>
+  </td>
+  <td width="48" valign="top" style="width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="23" valign="top" style="width:17.55pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+  <td width="24" valign="top" style="width:17.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+  <td width="48" valign="top" style="width:36.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+  <td width="43" valign="top" style="width:32.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+  <td width="37" valign="top" style="width:27.4pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1<o:p></o:p></span></p>
+  </td>
+  <td width="48" valign="top" style="width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3">
+  <td width="23" valign="top" style="width:17.55pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+  <td width="24" valign="top" style="width:17.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+  <td width="48" valign="top" style="width:36.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+  <td width="43" valign="top" style="width:32.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+  <td width="169" colspan="3" rowspan="2" valign="top" style="width:126.4pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4;mso-yfti-lastrow:yes">
+  <td width="23" valign="top" style="width:17.55pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+  <td width="24" valign="top" style="width:17.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+  <td width="48" valign="top" style="width:36.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+  <td width="43" valign="top" style="width:32.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p><span lang="EN-US">Given two binary inputs x and y, x AND y outputs 1 only
+when x and y are 1. And x OR y outputs either x or y is 1. Given a binary input
+x, NOT x is returns 1 when x is 0, 0 when x is 1.<br>
+Any kind of logic can be represented as a combination of AND, OR and NOT.</span></p>
+
+<p><span lang="EN-US">Example</span></p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0">
+  <td width="35" valign="top" style="width:26.6pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">X</span></p>
+  </td>
+  <td width="36" valign="top" style="width:27.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Y</span></p>
+  </td>
+  <td width="48" valign="top" style="width:.5in;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">Out</span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="35" valign="top" style="width:26.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+  <td width="36" valign="top" style="width:27.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+  <td width="48" valign="top" style="width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="35" valign="top" style="width:26.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+  <td width="36" valign="top" style="width:27.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+  <td width="48" valign="top" style="width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3">
+  <td width="35" valign="top" style="width:26.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+  <td width="36" valign="top" style="width:27.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+  <td width="48" valign="top" style="width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">0</span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4;mso-yfti-lastrow:yes">
+  <td width="35" valign="top" style="width:26.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+  <td width="36" valign="top" style="width:27.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+  <td width="48" valign="top" style="width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US">1</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p><span lang="EN-US">When does the output have 1?</span></p>
+
+<p><span lang="EN-US">X = 0, Y = 0 or X = 1, Y = 1</span></p>
+
+<p><span lang="EN-US">We can write the answer as follows:</span></p>
+
+<p><span lang="EN-US">X’Y’ + XY</span></p>
+
+<p><span lang="EN-US">Any logic can be represented as a sum of products, and this
+is a two level logic.</span></p>
+
+<h3><span lang="EN-US">PLA (Programmable Logic Array)</span></h3>
+
+<p><span lang="EN-US">We know that two make a logic is to find a number of
+products (which is ANDed) and sum those products (by OR). PLA provides a number
+of <span class="GramE">connection</span> from inputs and outputs, then the user
+can simply choose contacts for the corresponding logic. And this is faster than
+connecting AND, OR, NOT logic gates individually. </span></p>
+
+<p><span lang="EN-US">Example,</span></p>
+
+<p><span class="GramE"><span lang="EN-US">We want to make a logic X’Y’ + XY using
+PLA.</span></span><span lang="EN-US"> Make contacts in the following layout.</span></p>
+
+<p><!--[if mso & !supportInlineShapes & supportFields]><span lang=EN-US><span
+style='mso-element:field-begin;mso-field-lock:yes'></span><span
+style='mso-spacerun:yes'> </span>SHAPE <span
+style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:field-separator'></span></span><![endif]--><span lang="EN-US"><!--[if gte vml 1]><v:group id="_x0000_s1104" editas="canvas"
+ style='width:253.2pt;height:189.75pt;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' coordorigin="1957,4432" coordsize="9092,6814">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <v:shape id="_x0000_s1103" type="#_x0000_t75" style='position:absolute;left:1957;
+  top:4432;width:9092;height:6814' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:group id="_x0000_s1061" style='position:absolute;left:5379;top:6065;
+  width:1368;height:978;rotation:180' coordorigin="1104,1632" coordsize="912,624">
+  <v:oval id="_x0000_s1062" style='position:absolute;left:1104;top:1632;
+   width:576;height:624;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+  <v:rect id="_x0000_s1063" style='position:absolute;left:1392;top:1632;
+   width:624;height:624;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+  <v:oval id="_x0000_s1064" style='position:absolute;left:1152;top:1632;
+   width:576;height:624;v-text-anchor:middle' fillcolor="#bbe0e3" stroked="f"/>
+ </v:group><v:shape id="_x0000_s1065" type="#_x0000_t184" style='position:absolute;
+  left:6992;top:9437;width:1076;height:1173;rotation:-90;v-text-anchor:middle'
+  fillcolor="#bbe0e3"/>
+ <v:shape id="_x0000_s1066" style='position:absolute;left:4157;top:5137;
+  width:684;height:586;rotation:-90' coordsize="816,672" path="m816,l,336,816,672,816,xe"
+  fillcolor="#bbe0e3">
+  <v:path arrowok="t"/>
+ </v:shape><v:oval id="_x0000_s1067" style='position:absolute;left:4391;top:5762;
+  width:215;height:196;rotation:-90;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+ <v:shapetype id="_x0000_t202" coordsize="21600,21600" o:spt="202" path="m,l,21600r21600,l21600,xe">
+  <v:stroke joinstyle="miter"/>
+  <v:path gradientshapeok="t" o:connecttype="rect"/>
+ </v:shapetype><v:shape id="_x0000_s1068" type="#_x0000_t202" style='position:absolute;
+  left:2132;top:4432;width:420;height:471;v-text-anchor:top-baseline' filled="f"
+  fillcolor="#bbe0e3" stroked="f">
+  <v:textbox style='mso-next-textbox:#_x0000_s1068' inset="1.1412mm,.57061mm,1.1412mm,.57061mm">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:none;
+     text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+     Gulim;mso-hansi-font-family:Arial;mso-bidi-font-family:Gulim;color:black'>X<o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1069" type="#_x0000_t202" style='position:absolute;
+  left:3599;top:4432;width:419;height:471;v-text-anchor:top-baseline' filled="f"
+  fillcolor="#bbe0e3" stroked="f">
+  <v:textbox style='mso-next-textbox:#_x0000_s1069' inset="1.1412mm,.57061mm,1.1412mm,.57061mm">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:none;
+     text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+     Gulim;mso-hansi-font-family:Arial;mso-bidi-font-family:Gulim;color:black'>Y<o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1070" style='position:absolute' from="2348,4892"
+  to="2348,9486"/>
+ <v:line id="_x0000_s1071" style='position:absolute' from="3815,4892" to="3815,9486"/>
+ <v:line id="_x0000_s1072" style='position:absolute' from="4499,5967" to="4499,9486"/>
+ <v:shape id="_x0000_s1073" style='position:absolute;left:2691;top:5136;
+  width:684;height:587;rotation:-90' coordsize="816,672" path="m816,l,336,816,672,816,xe"
+  fillcolor="#bbe0e3">
+  <v:path arrowok="t"/>
+ </v:shape><v:oval id="_x0000_s1074" style='position:absolute;left:2925;top:5762;
+  width:215;height:195;rotation:-90;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+ <v:line id="_x0000_s1075" style='position:absolute' from="3032,5967" to="3032,9486"/>
+ <v:group id="_x0000_s1076" style='position:absolute;left:5379;top:7238;
+  width:1368;height:978;rotation:180' coordorigin="1104,1632" coordsize="912,624">
+  <v:oval id="_x0000_s1077" style='position:absolute;left:1104;top:1632;
+   width:576;height:624;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+  <v:rect id="_x0000_s1078" style='position:absolute;left:1392;top:1632;
+   width:624;height:624;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+  <v:oval id="_x0000_s1079" style='position:absolute;left:1152;top:1632;
+   width:576;height:624;v-text-anchor:middle' fillcolor="#bbe0e3" stroked="f"/>
+ </v:group><v:group id="_x0000_s1080" style='position:absolute;left:5379;top:8411;
+  width:1368;height:978;rotation:180' coordorigin="1104,1632" coordsize="912,624">
+  <v:oval id="_x0000_s1081" style='position:absolute;left:1104;top:1632;
+   width:576;height:624;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+  <v:rect id="_x0000_s1082" style='position:absolute;left:1392;top:1632;
+   width:624;height:624;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+  <v:oval id="_x0000_s1083" style='position:absolute;left:1152;top:1632;
+   width:576;height:624;v-text-anchor:middle' fillcolor="#bbe0e3" stroked="f"/>
+ </v:group><v:line id="_x0000_s1084" style='position:absolute;flip:x' from="1957,6358"
+  to="5379,6358"/>
+ <v:line id="_x0000_s1085" style='position:absolute;flip:x' from="1957,6749"
+  to="5379,6749"/>
+ <v:line id="_x0000_s1086" style='position:absolute;flip:x' from="1957,7531"
+  to="5379,7531"/>
+ <v:line id="_x0000_s1087" style='position:absolute;flip:x' from="1957,7922"
+  to="5379,7922"/>
+ <v:line id="_x0000_s1088" style='position:absolute;flip:x' from="1957,8704"
+  to="5379,8704"/>
+ <v:line id="_x0000_s1089" style='position:absolute;flip:x' from="1957,9095"
+  to="5379,9095"/>
+ <v:shape id="_x0000_s1090" type="#_x0000_t184" style='position:absolute;
+  left:8361;top:9437;width:1076;height:1173;rotation:-90;v-text-anchor:middle'
+  fillcolor="#bbe0e3"/>
+ <v:shape id="_x0000_s1091" type="#_x0000_t184" style='position:absolute;
+  left:9729;top:9437;width:1076;height:1173;rotation:-90;v-text-anchor:middle'
+  fillcolor="#bbe0e3"/>
+ <v:shape id="_x0000_s1092" type="#_x0000_t202" style='position:absolute;
+  left:2523;top:9808;width:2269;height:754;v-text-anchor:top-baseline'
+  filled="f" fillcolor="#bbe0e3" stroked="f">
+  <v:textbox style='mso-next-textbox:#_x0000_s1092' inset="1.1412mm,.57061mm,1.1412mm,.57061mm">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:none;
+     text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+     Gulim;mso-hansi-font-family:Arial;mso-bidi-font-family:Gulim;color:black'>AND
+     plane<o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1093" type="#_x0000_t202" style='position:absolute;
+  left:8115;top:5087;width:2151;height:665;v-text-anchor:top-baseline'
+  filled="f" fillcolor="#bbe0e3" stroked="f">
+  <v:textbox style='mso-next-textbox:#_x0000_s1093' inset="1.1412mm,.57061mm,1.1412mm,.57061mm">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:none;
+     text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+     Gulim;mso-hansi-font-family:Arial;mso-bidi-font-family:Gulim;color:black'>OR
+     plane<o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1094" style='position:absolute' from="6747,6554"
+  to="11049,6554"/>
+ <v:line id="_x0000_s1095" style='position:absolute' from="6747,7727" to="11049,7727"/>
+ <v:line id="_x0000_s1096" style='position:absolute' from="6747,8900" to="11049,8900"/>
+ <v:line id="_x0000_s1097" style='position:absolute' from="7530,6261" to="7530,9975"/>
+ <v:line id="_x0000_s1098" style='position:absolute' from="8898,6261" to="8898,9975"/>
+ <v:line id="_x0000_s1099" style='position:absolute' from="10267,6261" to="10267,9975"/>
+ <v:line id="_x0000_s1100" style='position:absolute' from="7530,10562" to="7530,11246"/>
+ <v:line id="_x0000_s1101" style='position:absolute' from="8898,10562" to="8898,11246"/>
+ <v:line id="_x0000_s1102" style='position:absolute' from="10267,10562" to="10267,11246"/>
+ <w:wrap type="none"/>
+ <w:anchorlock/>
+</v:group><![endif]--><!--[if !vml]--><img width="340" height="256" src="./Discussion 9_files/image004.gif" v:shapes="_x0000_s1104 _x0000_s1103 _x0000_s1061 _x0000_s1062 _x0000_s1063 _x0000_s1064 _x0000_s1065 _x0000_s1066 _x0000_s1067 _x0000_s1068 _x0000_s1069 _x0000_s1070 _x0000_s1071 _x0000_s1072 _x0000_s1073 _x0000_s1074 _x0000_s1075 _x0000_s1076 _x0000_s1077 _x0000_s1078 _x0000_s1079 _x0000_s1080 _x0000_s1081 _x0000_s1082 _x0000_s1083 _x0000_s1084 _x0000_s1085 _x0000_s1086 _x0000_s1087 _x0000_s1088 _x0000_s1089 _x0000_s1090 _x0000_s1091 _x0000_s1092 _x0000_s1093 _x0000_s1094 _x0000_s1095 _x0000_s1096 _x0000_s1097 _x0000_s1098 _x0000_s1099 _x0000_s1100 _x0000_s1101 _x0000_s1102"><!--[endif]--></span><!--[if mso & !supportInlineShapes & supportFields]><span
+lang=EN-US><v:shape id="_x0000_i1031" type="#_x0000_t75" style='width:253.2pt;
+ height:189.75pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span></span><![endif]--></p>
+
+<h3><span lang="EN-US">Hardware Description Language</span></h3>
+
+<p><span lang="EN-US">Hardware Description Language (HDL) describes logic
+circuits using programming language.</span></p>
+
+<p><span lang="EN-US">Verilog and VHDL are widely used HDLs. In CS61C, we learn
+Verilog.</span></p>
+
+<p><span lang="EN-US">Example</span></p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-lastrow:yes">
+  <td width="275" valign="top" style="width:206.6pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-left:16.0pt;text-indent:-16.0pt;mso-pagination:
+  none;mso-layout-grid-align:none;text-autospace:none"><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black">module xnor(X, Y, Z);<o:p></o:p></span></b></p>
+  <p class="MsoNormal" style="margin-left:16.0pt;text-indent:-16.0pt;mso-pagination:
+  none;mso-layout-grid-align:none;text-autospace:none"><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black">input X, Y;<o:p></o:p></span></b></p>
+  <p class="MsoNormal" style="margin-left:16.0pt;text-indent:-16.0pt;mso-pagination:
+  none;mso-layout-grid-align:none;text-autospace:none"><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black">output Z;<o:p></o:p></span></b></p>
+  <p class="MsoNormal" style="margin-left:16.0pt;text-indent:-16.0pt;mso-pagination:
+  none;mso-layout-grid-align:none;text-autospace:none"><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black">wire notX, notY, XY, notXnotY;<o:p></o:p></span></b></p>
+  <p class="MsoNormal" style="margin-left:16.0pt;text-indent:-16.0pt;mso-pagination:
+  none;mso-layout-grid-align:none;text-autospace:none"><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black">not<o:p></o:p></span></b></p>
+  <p class="MsoNormal" style="margin-left:16.0pt;text-indent:-16.0pt;mso-pagination:
+  none;mso-layout-grid-align:none;text-autospace:none"><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black"><span style="mso-spacerun:yes">&nbsp; </span>(</span></b><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+  &quot;Courier New&quot;;color:lime">notX</span></b><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black">, X);<o:p></o:p></span></b></p>
+  <p class="MsoNormal" style="margin-left:16.0pt;text-indent:-16.0pt;mso-pagination:
+  none;mso-layout-grid-align:none;text-autospace:none"><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black"><span style="mso-spacerun:yes">&nbsp; </span>(</span></b><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+  &quot;Courier New&quot;;color:lime">notY</span></b><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black">, Y);<o:p></o:p></span></b></p>
+  <p class="MsoNormal" style="margin-left:16.0pt;text-indent:-16.0pt;mso-pagination:
+  none;mso-layout-grid-align:none;text-autospace:none"><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black">and<o:p></o:p></span></b></p>
+  <p class="MsoNormal" style="margin-left:16.0pt;text-indent:-16.0pt;mso-pagination:
+  none;mso-layout-grid-align:none;text-autospace:none"><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black"><span style="mso-spacerun:yes">&nbsp; </span>(</span></b><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+  &quot;Courier New&quot;;color:#063DE8">notXnotY</span></b><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black">, </span></b><b><span lang="EN-US" style="font-size:12.5pt;
+  font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;color:lime">notX</span></b><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+  &quot;Courier New&quot;;color:black">, </span></b><b><span lang="EN-US" style="font-size:
+  12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:lime">notY</span></b><b><span lang="EN-US" style="font-size:12.5pt;
+  font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;color:black">);<o:p></o:p></span></b></p>
+  <p class="MsoNormal" style="margin-left:16.0pt;text-indent:-16.0pt;mso-pagination:
+  none;mso-layout-grid-align:none;text-autospace:none"><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black"><span style="mso-spacerun:yes">&nbsp; </span>(</span></b><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+  &quot;Courier New&quot;;color:#063DE8">XY</span></b><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black">, X, Y);<o:p></o:p></span></b></p>
+  <p class="MsoNormal" style="margin-left:16.0pt;text-indent:-16.0pt;mso-pagination:
+  none;mso-layout-grid-align:none;text-autospace:none"><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black">or<o:p></o:p></span></b></p>
+  <p class="MsoNormal" style="margin-left:16.0pt;text-indent:-16.0pt;mso-pagination:
+  none;mso-layout-grid-align:none;text-autospace:none"><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black"><span style="mso-spacerun:yes">&nbsp; </span>(Z, </span></b><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+  &quot;Courier New&quot;;color:#063DE8">XY</span></b><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black">, </span></b><b><span lang="EN-US" style="font-size:12.5pt;
+  font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;color:#063DE8">notXnotY</span></b><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:
+  &quot;Courier New&quot;;color:black">);<o:p></o:p></span></b></p>
+  <p class="MsoNormal" style="margin-left:16.0pt;text-indent:-16.0pt;mso-pagination:
+  none;mso-layout-grid-align:none;text-autospace:none"><b><span lang="EN-US" style="font-size:12.5pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+  color:black">End;<o:p></o:p></span></b></p>
+  <p><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width="380" valign="top" style="width:285.1pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><!--[if mso & !supportInlineShapes & supportFields]><span lang=EN-US><span
+  style='mso-element:field-begin;mso-field-lock:yes'></span><span
+  style='mso-spacerun:yes'> </span>SHAPE <span
+  style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:
+  field-separator'></span></span><![endif]--><span lang="EN-US"><!--[if gte vml 1]><v:group
+   id="_x0000_s1220" editas="canvas" style='width:276.95pt;height:124.5pt;
+   mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+   coordorigin="105" coordsize="4662,2096">
+   <o:lock v:ext="edit" aspectratio="t"/>
+   <v:shape id="_x0000_s1219" type="#_x0000_t75" style='position:absolute;
+    left:105;width:4662;height:2096' o:preferrelative="f">
+    <v:fill o:detectmouseclick="t"/>
+    <v:path o:extrusionok="t" o:connecttype="none"/>
+    <o:lock v:ext="edit" text="t"/>
+   </v:shape><v:shape id="_x0000_s1215" type="#_x0000_t202" style='position:absolute;
+    left:158;top:209;width:281;height:315;v-text-anchor:top-baseline' filled="f"
+    fillcolor="#bbe0e3" stroked="f">
+    <v:textbox inset="1.65978mm,.82989mm,1.65978mm,.82989mm">
+     <![if !mso]>
+     <table cellpadding=0 cellspacing=0 width="100%">
+      <tr>
+       <td><![endif]>
+       <div>
+       <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:
+       none;text-autospace:none'><span lang=EN-US style='font-family:Gulim;
+       mso-hansi-font-family:Arial;mso-bidi-font-family:Gulim;color:black'>X<o:p></o:p></span></p>
+       </div>
+       <![if !mso]></td>
+      </tr>
+     </table>
+     <![endif]></v:textbox>
+   </v:shape><v:shape id="_x0000_s1216" type="#_x0000_t202" style='position:absolute;
+    left:157;top:452;width:281;height:314;v-text-anchor:top-baseline' filled="f"
+    fillcolor="#bbe0e3" stroked="f">
+    <v:textbox inset="1.65978mm,.82989mm,1.65978mm,.82989mm">
+     <![if !mso]>
+     <table cellpadding=0 cellspacing=0 width="100%">
+      <tr>
+       <td><![endif]>
+       <div>
+       <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:
+       none;text-autospace:none'><span lang=EN-US style='font-family:Gulim;
+       mso-hansi-font-family:Arial;mso-bidi-font-family:Gulim;color:black'>Y<o:p></o:p></span></p>
+       </div>
+       <![if !mso]></td>
+      </tr>
+     </table>
+     <![endif]></v:textbox>
+   </v:shape><v:group id="_x0000_s1188" style='position:absolute;left:334;
+    width:4073;height:1736' coordorigin="1920,782" coordsize="2988,1273">
+    <v:group id="_x0000_s1189" style='position:absolute;left:2016;top:960;
+     width:864;height:384;flip:x' coordorigin="864,1632" coordsize="1392,624">
+     <v:line id="_x0000_s1190" style='position:absolute' from="2016,1824" to="2256,1824"/>
+     <v:line id="_x0000_s1191" style='position:absolute' from="2016,2064" to="2256,2064"/>
+     <v:line id="_x0000_s1192" style='position:absolute' from="864,1920" to="1104,1920"/>
+     <v:group id="_x0000_s1193" style='position:absolute;left:1104;top:1632;
+      width:912;height:624' coordorigin="1104,1632" coordsize="912,624">
+      <v:oval id="_x0000_s1194" style='position:absolute;left:1104;top:1632;
+       width:576;height:624;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+      <v:rect id="_x0000_s1195" style='position:absolute;left:1392;top:1632;
+       width:624;height:624;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+      <v:oval id="_x0000_s1196" style='position:absolute;left:1152;top:1632;
+       width:576;height:624;v-text-anchor:middle' fillcolor="#bbe0e3"
+       stroked="f"/>
+     </v:group></v:group><v:shape id="_x0000_s1197" type="#_x0000_t184"
+     style='position:absolute;left:3010;top:1200;width:800;height:528;flip:x;
+     v-text-anchor:middle' fillcolor="#bbe0e3"/>
+    <v:line id="_x0000_s1198" style='position:absolute;flip:x' from="2864,1296"
+     to="3264,1296"/>
+    <v:line id="_x0000_s1199" style='position:absolute;flip:x' from="2864,1632"
+     to="3264,1632"/>
+    <v:line id="_x0000_s1200" style='position:absolute;flip:x' from="3810,1444"
+     to="4032,1444"/>
+    <v:line id="_x0000_s1201" style='position:absolute;flip:x' from="1920,1680"
+     to="2069,1680"/>
+    <v:line id="_x0000_s1202" style='position:absolute;flip:x' from="1920,1828"
+     to="2069,1828"/>
+    <v:line id="_x0000_s1203" style='position:absolute;flip:x' from="2731,1761"
+     to="2880,1761"/>
+    <v:group id="_x0000_s1204" style='position:absolute;left:2165;top:1584;
+     width:566;height:384;flip:x' coordorigin="1104,1632" coordsize="912,624">
+     <v:oval id="_x0000_s1205" style='position:absolute;left:1104;top:1632;
+      width:576;height:624;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+     <v:rect id="_x0000_s1206" style='position:absolute;left:1392;top:1632;
+      width:624;height:624;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+     <v:oval id="_x0000_s1207" style='position:absolute;left:1152;top:1632;
+      width:576;height:624;v-text-anchor:middle' fillcolor="#bbe0e3" stroked="f"/>
+    </v:group><v:line id="_x0000_s1208" style='position:absolute' from="2880,1632"
+     to="2880,1776"/>
+    <v:line id="_x0000_s1209" style='position:absolute' from="2880,1152" to="2880,1296"/>
+    <v:oval id="_x0000_s1210" style='position:absolute;left:2064;top:1632;
+     width:96;height:96;flip:x;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+    <v:oval id="_x0000_s1211" style='position:absolute;left:2064;top:1776;
+     width:96;height:96;flip:x;v-text-anchor:middle' fillcolor="#bbe0e3"/>
+    <v:shape id="_x0000_s1212" type="#_x0000_t202" style='position:absolute;
+     left:2822;top:782;width:296;height:231;v-text-anchor:top-baseline'
+     filled="f" fillcolor="#bbe0e3" stroked="f">
+     <v:textbox inset="1.65978mm,.82989mm,1.65978mm,.82989mm">
+      <![if !mso]>
+      <table cellpadding=0 cellspacing=0 width="100%">
+       <tr>
+        <td><![endif]>
+        <div>
+        <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:
+        none;text-autospace:none'><span lang=EN-US style='font-family:Gulim;
+        mso-hansi-font-family:Arial;mso-bidi-font-family:Gulim;color:black'>XY<o:p></o:p></span></p>
+        </div>
+        <![if !mso]></td>
+       </tr>
+      </table>
+      <![endif]></v:textbox>
+    </v:shape><v:shape id="_x0000_s1213" type="#_x0000_t202" style='position:absolute;
+     left:2784;top:1824;width:728;height:231;v-text-anchor:top-baseline'
+     filled="f" fillcolor="#bbe0e3" stroked="f">
+     <v:textbox inset="1.65978mm,.82989mm,1.65978mm,.82989mm">
+      <![if !mso]>
+      <table cellpadding=0 cellspacing=0 width="100%">
+       <tr>
+        <td><![endif]>
+        <div>
+        <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:
+        none;text-autospace:none'><span class=GramE><span lang=EN-US
+        style='font-family:Gulim;mso-hansi-font-family:Arial;mso-bidi-font-family:
+        Gulim;color:black'>notXnotY</span></span><span lang=EN-US
+        style='font-family:Gulim;mso-hansi-font-family:Arial;mso-bidi-font-family:
+        Gulim;color:black'><o:p></o:p></span></p>
+        </div>
+        <![if !mso]></td>
+       </tr>
+      </table>
+      <![endif]></v:textbox>
+    </v:shape><v:shape id="_x0000_s1214" type="#_x0000_t202" style='position:absolute;
+     left:4118;top:1310;width:790;height:231;v-text-anchor:top-baseline'
+     filled="f" fillcolor="#bbe0e3" stroked="f">
+     <v:textbox inset="1.65978mm,.82989mm,1.65978mm,.82989mm">
+      <![if !mso]>
+      <table cellpadding=0 cellspacing=0 width="100%">
+       <tr>
+        <td><![endif]>
+        <div>
+        <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:
+        none;text-autospace:none'><span lang=EN-US style='font-family:Gulim;
+        mso-hansi-font-family:Arial;mso-bidi-font-family:Gulim;color:black'>X
+        XNOR Y<o:p></o:p></span></p>
+        </div>
+        <![if !mso]></td>
+       </tr>
+      </table>
+      <![endif]></v:textbox>
+    </v:shape></v:group><v:shape id="_x0000_s1218" type="#_x0000_t202" style='position:absolute;
+    left:105;top:1335;width:237;height:265;v-text-anchor:top-baseline'
+    filled="f" fillcolor="#bbe0e3" stroked="f">
+    <v:textbox inset="3.96pt,1.98pt,3.96pt,1.98pt">
+     <![if !mso]>
+     <table cellpadding=0 cellspacing=0 width="100%">
+      <tr>
+       <td><![endif]>
+       <div>
+       <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:
+       none;text-autospace:none'><span lang=EN-US style='font-family:Gulim;
+       mso-hansi-font-family:Arial;mso-bidi-font-family:Gulim;color:black'>Y<o:p></o:p></span></p>
+       </div>
+       <![if !mso]></td>
+      </tr>
+     </table>
+     <![endif]></v:textbox>
+   </v:shape><v:shape id="_x0000_s1217" type="#_x0000_t202" style='position:absolute;
+    left:105;top:1071;width:237;height:264;v-text-anchor:top-baseline'
+    filled="f" fillcolor="#bbe0e3" stroked="f">
+    <v:textbox inset="3.96pt,1.98pt,3.96pt,1.98pt">
+     <![if !mso]>
+     <table cellpadding=0 cellspacing=0 width="100%">
+      <tr>
+       <td><![endif]>
+       <div>
+       <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:
+       none;text-autospace:none'><span lang=EN-US style='font-family:Gulim;
+       mso-hansi-font-family:Arial;mso-bidi-font-family:Gulim;color:black'>X<o:p></o:p></span></p>
+       </div>
+       <![if !mso]></td>
+      </tr>
+     </table>
+     <![endif]></v:textbox>
+   </v:shape><w:wrap type="none"/>
+   <w:anchorlock/>
+  </v:group><![endif]--><!--[if !vml]--><img width="371" height="168" src="./Discussion 9_files/image005.gif" v:shapes="_x0000_s1220 _x0000_s1219 _x0000_s1215 _x0000_s1216 _x0000_s1188 _x0000_s1189 _x0000_s1190 _x0000_s1191 _x0000_s1192 _x0000_s1193 _x0000_s1194 _x0000_s1195 _x0000_s1196 _x0000_s1197 _x0000_s1198 _x0000_s1199 _x0000_s1200 _x0000_s1201 _x0000_s1202 _x0000_s1203 _x0000_s1204 _x0000_s1205 _x0000_s1206 _x0000_s1207 _x0000_s1208 _x0000_s1209 _x0000_s1210 _x0000_s1211 _x0000_s1212 _x0000_s1213 _x0000_s1214 _x0000_s1218 _x0000_s1217"><!--[endif]--></span><!--[if mso & !supportInlineShapes & supportFields]><span
+  lang=EN-US><v:shape id="_x0000_i1027" type="#_x0000_t75" style='width:276.95pt;
+   height:124.5pt'>
+   <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+  </v:shape><span style='mso-element:field-end'></span></span><![endif]--><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<h3><span lang="EN-US">Sequential Logic</span></h3>
+
+<p><span lang="EN-US">Up to now we discussed combinational logic which only
+depends on the inputs. </span></p>
+
+<p><span lang="EN-US">In sequential logic, they use feedback to store a state. In
+sequential logic, the current logic value depends on not only the inputs but
+also the previous logic value.</span></p>
+
+<p><span lang="EN-US">RS-latch</span></p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-lastrow:yes">
+  <td width="301" valign="top" style="width:225.9pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US"><!--[if gte vml 1]><v:shape id="_x0000_s1222" type="#_x0000_t75"
+   style='width:272pt;height:166pt;mso-position-horizontal-relative:char;
+   mso-position-vertical-relative:line' fillcolor="#fc0128" strokeweight="1pt">
+   <v:imagedata src="discussion9_files/image006.png" o:title=""/>
+   <v:shadow color="#919191"/>
+   <w:wrap type="none"/>
+   <w:anchorlock/>
+  </v:shape><![endif]--><!--[if !vml]--><img width="363" height="221" src="./Discussion 9_files/image007.jpg" v:shapes="_x0000_s1222"><!--[endif]--></span></p>
+  </td>
+  <td width="301" valign="top" style="width:225.9pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><b><span lang="EN-US">S R Q<o:p></o:p></span></b></p>
+  <p><b><span lang="EN-US">0 0 hold (keep value) <o:p></o:p></span></b></p>
+  <p><b><span lang="EN-US">0 1 0<o:p></o:p></span></b></p>
+  <p><b><span lang="EN-US">1 0 1<o:p></o:p></span></b></p>
+  <p><b><span lang="EN-US">1 1 unstable<o:p></o:p></span></b></p>
+  <p><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+<p><span class="GramE"><span lang="EN-US">Problem of RS latch.</span></span></p>
+
+<p><span lang="EN-US">It goes to unstable state when SR = 11.</span></p>
+
+<p><span lang="EN-US">Input signal R and S should change simultaneously.
+Otherwise, it can go to an unstable state for a short time.</span></p>
+
+<p><span lang="EN-US">Flip-flop</span></p>
+
+<p><span lang="EN-US">Control when input can affect the states using clock
+signal.</span></p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-lastrow:yes">
+  <td width="301" valign="top" style="width:225.9pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><span lang="EN-US"><!--[if gte vml 1]><v:shape id="_x0000_s1223" type="#_x0000_t75"
+   style='width:231.75pt;height:144.95pt;mso-position-horizontal-relative:char;
+   mso-position-vertical-relative:line' fillcolor="#fc0128" strokeweight="1pt">
+   <v:imagedata src="discussion9_files/image008.png" o:title=""/>
+   <v:shadow color="#919191"/>
+   <w:wrap type="none"/>
+   <w:anchorlock/>
+  </v:shape><![endif]--><!--[if !vml]--><img width="309" height="193" src="./Discussion 9_files/image009.jpg" v:shapes="_x0000_s1223"><!--[endif]--></span></p>
+  </td>
+  <td width="301" valign="top" style="width:225.9pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p><!--[if mso & !supportInlineShapes & supportFields]><span lang=EN-US><span
+  style='mso-element:field-begin;mso-field-lock:yes'></span><span
+  style='mso-spacerun:yes'> </span>SHAPE <span
+  style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:
+  field-separator'></span></span><![endif]--><span lang="EN-US"><!--[if gte vml 1]><v:group
+   id="_x0000_s1241" editas="canvas" style='width:215.1pt;height:168.3pt;
+   mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+   coordorigin="1957,1567" coordsize="9038,7072">
+   <o:lock v:ext="edit" aspectratio="t"/>
+   <v:shape id="_x0000_s1240" type="#_x0000_t75" style='position:absolute;
+    left:1957;top:1567;width:9038;height:7072' o:preferrelative="f">
+    <v:fill o:detectmouseclick="t"/>
+    <v:path o:extrusionok="t" o:connecttype="none"/>
+    <o:lock v:ext="edit" text="t"/>
+   </v:shape><v:shape id="_x0000_s1233" style='position:absolute;left:3363;
+    top:1888;width:7230;height:804;mso-wrap-style:none;
+    mso-position-horizontal:absolute;mso-position-vertical:absolute;
+    v-text-anchor:middle' coordsize="1728,192" path="m,192r336,l336,r960,l1296,192r432,e"
+    filled="f" fillcolor="#fc0128" strokecolor="#fc0128" strokeweight="3pt">
+    <v:shadow color="#919191"/>
+    <v:path arrowok="t"/>
+   </v:shape><v:shape id="_x0000_s1234" style='position:absolute;left:3363;
+    top:3495;width:7632;height:804;mso-wrap-style:none;
+    mso-position-horizontal:absolute;mso-position-vertical:absolute;
+    v-text-anchor:middle' coordsize="1824,192" path="m,192r576,l576,,864,r,192l1488,192,1488,r336,e"
+    filled="f" fillcolor="#fc0128" strokecolor="#063de8" strokeweight="3pt">
+    <v:shadow color="#919191"/>
+    <v:path arrowok="t"/>
+   </v:shape><v:shape id="_x0000_s1235" style='position:absolute;left:3564;
+    top:5504;width:7431;height:803;mso-wrap-style:none;
+    mso-position-horizontal:absolute;mso-position-vertical:absolute;
+    v-text-anchor:middle' coordsize="1776,192" path="m,192r576,l576,r912,l1488,192r288,e"
+    filled="f" fillcolor="#fc0128" strokecolor="green" strokeweight="3pt">
+    <v:shadow color="#919191"/>
+    <v:path arrowok="t"/>
+   </v:shape><v:shape id="_x0000_s1236" type="#_x0000_t202" style='position:absolute;
+    left:1957;top:1567;width:1271;height:1504;mso-wrap-style:none;
+    v-text-anchor:top-baseline' filled="f" fillcolor="#fc0128" stroked="f"
+    strokeweight="1pt">
+    <v:shadow color="#919191"/>
+    <v:textbox style='mso-fit-shape-to-text:t' inset="5.76pt,2.88pt,5.76pt,2.88pt">
+     <![if !mso]>
+     <table cellpadding=0 cellspacing=0 width="100%">
+      <tr>
+       <td><![endif]>
+       <div>
+       <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:
+       none;text-autospace:none'><b><span lang=EN-US style='font-size:25.5pt;
+       font-family:Helvetica;mso-fareast-font-family:Gulim;mso-bidi-font-family:
+       Helvetica;color:#FC0128'>D<o:p></o:p></span></b></p>
+       </div>
+       <![if !mso]></td>
+      </tr>
+     </table>
+     <![endif]></v:textbox>
+   </v:shape><v:shape id="_x0000_s1237" type="#_x0000_t202" style='position:absolute;
+    left:1957;top:3376;width:1271;height:1504;mso-wrap-style:none;
+    v-text-anchor:top-baseline' filled="f" fillcolor="#fc0128" stroked="f"
+    strokeweight="1pt">
+    <v:shadow color="#919191"/>
+    <v:textbox style='mso-fit-shape-to-text:t' inset="5.76pt,2.88pt,5.76pt,2.88pt">
+     <![if !mso]>
+     <table cellpadding=0 cellspacing=0 width="100%">
+      <tr>
+       <td><![endif]>
+       <div>
+       <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:
+       none;text-autospace:none'><b><span lang=EN-US style='font-size:25.5pt;
+       font-family:Helvetica;mso-fareast-font-family:Gulim;mso-bidi-font-family:
+       Helvetica;color:#063DE8'>C<o:p></o:p></span></b></p>
+       </div>
+       <![if !mso]></td>
+      </tr>
+     </table>
+     <![endif]></v:textbox>
+   </v:shape><v:shape id="_x0000_s1238" type="#_x0000_t202" style='position:absolute;
+    left:1957;top:5303;width:1303;height:1504;mso-wrap-style:none;
+    v-text-anchor:top-baseline' filled="f" fillcolor="#fc0128" stroked="f"
+    strokeweight="1pt">
+    <v:shadow color="#919191"/>
+    <v:textbox style='mso-fit-shape-to-text:t' inset="5.76pt,2.88pt,5.76pt,2.88pt">
+     <![if !mso]>
+     <table cellpadding=0 cellspacing=0 width="100%">
+      <tr>
+       <td><![endif]>
+       <div>
+       <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:
+       none;text-autospace:none'><b><span lang=EN-US style='font-size:25.5pt;
+       font-family:Helvetica;mso-fareast-font-family:Gulim;mso-bidi-font-family:
+       Helvetica;color:green'>Q<o:p></o:p></span></b></p>
+       </div>
+       <![if !mso]></td>
+      </tr>
+     </table>
+     <![endif]></v:textbox>
+   </v:shape><v:shape id="_x0000_s1239" type="#_x0000_t202" style='position:absolute;
+    left:1957;top:7112;width:8836;height:937' filled="f" fillcolor="#fc0128"
+    stroked="f" strokeweight="1pt">
+    <v:shadow color="#919191"/>
+    <v:textbox style='mso-fit-shape-to-text:t' inset="5.76pt,2.88pt,5.76pt,2.88pt">
+     <![if !mso]>
+     <table cellpadding=0 cellspacing=0 width="100%">
+      <tr>
+       <td><![endif]>
+       <div>
+       <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+       mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><b><span
+       lang=EN-US style='font-size:14.0pt;font-family:Helvetica;mso-fareast-font-family:
+       Gulim;mso-bidi-font-family:Helvetica;color:black'>Timing Diagram (D-flip
+       flop)<o:p></o:p></span></b></p>
+       </div>
+       <![if !mso]></td>
+      </tr>
+     </table>
+     <![endif]></v:textbox>
+   </v:shape><w:wrap type="none"/>
+   <w:anchorlock/>
+  </v:group><![endif]--><!--[if !vml]--><img width="291" height="226" src="./Discussion 9_files/image010.gif" v:shapes="_x0000_s1241 _x0000_s1240 _x0000_s1233 _x0000_s1234 _x0000_s1235 _x0000_s1236 _x0000_s1237 _x0000_s1238 _x0000_s1239"><!--[endif]--></span><!--[if mso & !supportInlineShapes & supportFields]><span
+  lang=EN-US><v:shape id="_x0000_i1030" type="#_x0000_t75" style='width:215.1pt;
+   height:168.3pt'>
+   <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+  </v:shape><span style='mso-element:field-end'></span></span><![endif]--></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p><span lang="EN-US">&nbsp;</span></p>
+
+<h5><span lang="EN-US"><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion3.htm#top">Back to Top</a></span></h5>
+
+<div class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US">
+
+<hr size="2" width="100%" align="center">
+
+</span></div>
+
+<h5><span class="GramE"><span lang="EN-US">Revised: </span></span><st1:date year="2002" day="20" month="10"><span class="GramE"><span lang="EN-US">10/20/02</span></span></st1:date><span class="GramE"><span lang="EN-US">.</span></span></h5>
+
+</div>
+
+
+
+
+</o:smarttagtype></body></html>

@@ -1,0 +1,269 @@
+
+<!-- saved from url=(0055)http://www.cs.berkeley.edu/~jaein/cs61c/discussion3.htm -->
+<html><script type="text/javascript" src="chrome-extension://kajfghlhfkcocafkcjlajldicbikpgnp/catcher.js"><!-- script injected by Request Maker --></script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Discussion 3</title>
+<style type="text/css"></style></head>
+
+<body>
+
+<h2><a name="top">Discussion 3</a></h2>
+<p>9/10/02 Tue</p>
+<ol>
+  <li><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion3.htm#memory allocation"><strong>Memory allocation in C</strong></a></li>
+  <li><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion3.htm#introduction to structure"><strong>Introduction to structure</strong></a></li>
+  <li><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion3.htm#pointer and structure"><strong>Pointer and structure</strong></a></li>
+  <li><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion3.htm#typedef"><strong>Typedef</strong></a></li>
+  <li><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion3.htm#self referencing structure"><strong>Self referencing structure</strong></a></li>
+</ol>
+<hr>
+<h3><a name="memory allocation">Memory allocation in C</a></h3>
+<h4>In C, memory can be allocated in three diffrent ways:</h4>
+<h4>Static storage, stack and heap</h4>
+<h4>Static storage is allocated for a global variable and the storage exists
+during entire program run. Stack storage is allocated when the program enters a
+block and deallocated when it exits from the block. Both the size of static and
+stack storage is determined at compile time and storage allocation and
+deallocation are done by the compiler.</h4>
+<h4>Heap storage is allocated at run time for whatever size specified up to the
+limit. While heap storage has its advantage that a programmer can specify the
+size of memory as necessary at run time, the allocated heap storage should be
+explicitly deallocated by the programmer. If the storage is left without being
+deallocated, it can't be accessed from the system and reduce the total available
+memory in a system.</h4>
+<pre>#define ARRAY_SIZE 10
+double array1[ARRAY_SIZE];</pre>
+<pre>double average(int a[], int n)
+{
+    double result = 0.0;
+    for (i = 0; i &lt; n; i++) {
+        result += array1[i];
+    }
+    return (result / n);
+}
+
+int main(void)
+{
+    double array2[10];
+    double *array3;
+    fill_array(array1);
+    fill_array(array2);
+    array3 = (double *) malloc(sizeof(double) * ARRAY_SIZE);
+    fill_array(array3);
+    printf("Average of array 1, 2 and 3 are: %lf, %lf, %lf\n",
+            average(array1), average(array2), average(array3));
+    free(array3);
+
+    return 0;
+}</pre>
+<p>Allocation memory dynamically:</p>
+<pre>ptr = (type *) malloc (sizeof(type) * ARRAY_LENGTH);</pre>
+<p>The memory can be deallocated:</p>
+<pre>free (ptr);</pre>
+<p>&nbsp;</p>
+<h3>Short quiz</h3>
+<h4>1. Write a code to allocate the space for the string and copy the given
+string to the newly allocated space.</h4>
+<pre>char* strdup(char *str)
+{
+	char *result;</pre>
+<pre>	_____________________</pre>
+<pre>	strcpy(result, str);
+	return result;
+}
+</pre>
+<h3><a name="introduction to structure">Introduction to structure</a></h3>
+<h4>Structure is a collection of one or more variables grouped in a single name.
+Each variable in a structure called a member. Unlike Java, which evolved from C,
+the structure in C has only members not the methods.&nbsp;</h4>
+<h4>Structures can be declared as follows:&nbsp;</h4>
+<pre>struct point {
+	int x;
+	int y;
+};</pre>
+<h4>Given the declaration of <u>point</u> above, a variable pt of struct&nbsp;
+point type can be defined as follows:</h4>
+<pre>struct point pt;</pre>
+<h4>Operations on structures.</h4>
+<h4>To access a member in a structure, we use "." (dot) operator. For
+example,</h4>
+<pre>pt.x = 0;
+pt.y = 10;</pre>
+<h3>Short quiz</h3>
+<h4>2. Write a code to find calculate the distance between two points (pt1 and
+pt2).</h4>
+<pre>double sqrt(double x);</pre>
+<pre>struct point {
+	double x;
+	double y;
+};</pre>
+<pre>double dist(struct point pt1, struct point pt2)
+{
+	return sqrt(____________________);
+}
+</pre>
+<h3><a name="pointer and structure">Pointer and structure</a></h3>
+<h4>As in the basic type, we can think of a pointer of a structure.</h4>
+<pre>struct point *p1;</pre>
+<h4>is the declaration for a pointer whose type is pointer to struct point.</h4>
+<h4>When we take the address of a structure we take the address of (&amp;)
+operator.</h4>
+<pre>struct point pt1;
+struct point *p1 = &amp;pt1;</pre>
+<h4>When we dereference a structure, we use the dereference operator (*).&nbsp;</h4>
+<pre>struct point pt1, pt2;
+struct point *p1 = &amp;pt1;
+
+(*p1).x = 0;
+(*p1).y = 1;
+pt2 = *p1;</pre>
+<h4>Since the accessing a member of dereferenced variable is frequently used,
+there is a short hand notation.</h4>
+<table border="0" width="100%">
+  <tbody><tr>
+    <td width="33%">
+      <p align="center">(*p1).x = 0;<br>
+      (*p1).y = 1;</p></td>
+    <td width="33%">
+      <h4 align="center">is equivalent to</h4>
+    </td>
+    <td width="34%">
+      <p align="center">p1-&gt;x = 0;<br>
+      p1-&gt;y = 1;</p></td>
+  </tr>
+</tbody></table>
+<h3>Short quiz</h3>
+<h4>3. Modify the code in short quiz 2 so that dist takes the the pointers to
+struct point instead.</h4>
+<pre>double dist(struct point *p1, struct point *p2)
+{
+	return sqrt(_________________________________);
+}
+</pre>
+<h3><a name="typedef">Typedef</a></h3>
+<h4>Typedef is alasing a type so that the type can be used more conveniently.
+Typically, a structure is used with typedef to make its type name shorter.</h4>
+<table border="0" width="100%">
+  <tbody><tr>
+    <td width="25%">
+<pre>struct point {
+	double x;
+	double y;
+};
+typedef struct point point;</pre>
+    </td>
+    <td width="32%">
+      <h4 align="center">is equivalent to</h4>
+    </td>
+    <td width="43%">
+<pre>typedef struct point {
+	double x;
+	double y;
+} point;
+</pre>
+    </td>
+  </tr>
+</tbody></table>
+<h4>struct point * can be shorted to ppoint using the following declaration:</h4>
+<pre>typedef struct point * ppoint;</pre>
+<h3><a name="self referencing structure">Self referencing structure</a></h3>
+<h4>A structure (struct t1) cannot have a variable of its own type (struct t1)
+because we don't know how much space needs to be allocated for the structure.
+Whereas a pointer to the structure (struct t1 *) can be a member of the
+structure. This is because pointer always takes the same size (4 bytes) in
+32-bit machine, thus it's possible to determine the size of structure variable.
+When a structure has a member of pointer to the structure, then it is called
+self referencing structure. Self referencing structure is used when a data
+structure is composed of the same type and it is travered using pointer like
+linked-list and tree.</h4>
+<h4>Example: Linked list</h4>
+<pre>struct lnode {
+	char *word;
+	struct lnode *next;
+};</pre>
+<pre>typedef struct lnode lnode;
+typedef struct lnode * plnode;</pre>
+<pre>plnode addhead(plnode head, char *str)
+{
+	plnode *temp;</pre>
+<pre>	if (head == NULL) {
+		temp = (plnode)malloc(sizeof(lnode));
+		temp-&gt;word = strdup(str);
+		temp-&gt;next = NULL;
+		return temp;
+	}
+	else {
+		temp = (plnode)malloc(sizeof(lnode));
+		temp-&gt;word = strdup(str);
+		temp-&gt;next = head;
+		return temp;
+	}
+}
+
+void print_list(plnode head)
+{
+	plnode *temp;</pre>
+<pre>	for (temp = head; temp != NULL; temp = temp-&gt;next) {
+		printf("%s\n", temp-&gt;word);
+	}
+}
+
+void delete_list(plnode head)
+{
+	plnode *old, *temp = head;</pre>
+<pre>	while (temp != NULL) {
+		old = temp;
+		temp = temp-&gt;next;
+		free (old-&gt;word);
+	}
+}
+
+int main(void)
+{
+	char *test_string[] = {
+		"This", "is", "a", "test." };
+	int n = sizeof(test_string) / sizeof(test_string[0]);
+	plnode *head;</pre>
+<pre>	for (i = 0; i &lt; n; i++) {
+		head = addhead(head, test_string[i]);
+	}
+	print_list(head);
+	delete_list(head);</pre>
+<pre>	return 0;
+}</pre>
+<h3>Short quiz</h3>
+<h4>4. Complete the function to add a node at the tail of the list rather than
+at the head.</h4>
+<pre>plnode addtail(plnode head, char *str)
+{
+	plnode *p, *temp;</pre>
+<pre>	if (head == NULL) {
+		temp = (plnode)malloc(sizeof(lnode));
+		temp-&gt;word = strdup(str);
+		temp-&gt;next = NULL;
+		return temp;
+	}
+	else {
+		for (p = head; p-&gt;next != NULL; p = p-&gt;next)
+			;
+		
+		temp = (plnode)malloc(sizeof(lnode));
+		temp-&gt;word = strdup(str);</pre>
+<pre>		___________________</pre>
+<pre>		___________________</pre>
+<pre>		return head;
+	}
+}
+</pre>
+<h5><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion3.htm#top">Back to Top</a></h5>
+<hr>
+<h5>Revised: <!--webbot bot="TimeStamp" S-FORMAT="%m/%d/%y" S-TYPE="EDITED" startspan -->09/09/02<!--webbot bot="TimeStamp" endspan i-checksum="12622" -->
+.</h5>
+
+
+
+
+</body></html>

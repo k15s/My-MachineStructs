@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0055)http://www.cs.berkeley.edu/~jaein/cs61c/discussion7.htm -->
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:st1="urn:schemas-microsoft-com:office:smarttags" xmlns="http://www.w3.org/TR/REC-html40"><script type="text/javascript" src="chrome-extension://kajfghlhfkcocafkcjlajldicbikpgnp/catcher.js"><!-- script injected by Request Maker --></script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="Generator" content="Microsoft FrontPage 4.0">
+<meta name="Originator" content="Microsoft Word 10">
+<link rel="File-List" href="http://www.cs.berkeley.edu/~jaein/cs61c/Discussion%206_files/filelist.xml">
+<link rel="Edit-Time-Data" href="http://www.cs.berkeley.edu/~jaein/cs61c/Discussion%206_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Discussion 7</title>
+<style type="text/css"></style></head><body lang="KO" link="blue" vlink="blue" style="tab-interval:42.55pt"><o:smarttagtype namespaceuri="urn:schemas-microsoft-com:office:smarttags" name="place">
+<o:smarttagtype namespaceuri="urn:schemas-microsoft-com:office:smarttags" name="date">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Jaein Jeong</o:Author>
+  <o:LastAuthor>Jaein Jeong</o:LastAuthor>
+  <o:Revision>4</o:Revision>
+  <o:TotalTime>354</o:TotalTime>
+  <o:Created>2002-10-07T15:56:00Z</o:Created>
+  <o:LastSaved>2002-10-07T21:50:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1895</o:Words>
+  <o:Characters>10806</o:Characters>
+  <o:Company>UC Berkeley</o:Company>
+  <o:Lines>90</o:Lines>
+  <o:Paragraphs>25</o:Paragraphs>
+  <o:CharactersWithSpaces>12676</o:CharactersWithSpaces>
+  <o:Version>10.3501</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:DoNotShowRevisions/>
+  <w:DoNotPrintRevisions/>
+  <w:DoNotShowMarkup/>
+  <w:Compatibility>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:Batang;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:Batang;
+	mso-bidi-font-family:"Times New Roman";}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h3
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h4
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h5
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:Batang;
+	mso-bidi-font-family:"Times New Roman";}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:Batang;
+	mso-bidi-font-family:"Courier New";}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:99.25pt 85.05pt 85.05pt 85.05pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1272930820;
+	mso-list-template-ids:494165094;}
+@list l0:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+</style>
+<![endif]-->
+<meta http-equiv="Content-Language" content="en-us">
+
+
+
+
+<div class="Section1">
+
+<h2><a name="top"><span lang="EN-US">Discussion 7</span></a></h2>
+
+<p><st1:date year="2002" day="1" month="10"><span lang="EN-US">10/8/02</span></st1:date><span lang="EN-US"> Tue</span></p>
+
+<div class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US">
+
+<hr size="2" width="100%" align="center">
+
+</span></div>
+
+<h3>IEEE Floating point standard</h3>
+
+<p>In IEEE 754, which is the most widely used floating point format, numbers are
+represented as follows:</p>
+
+<p>S(1-bit) E(8-bits) M(23-bits)</p>
+
+<p>Where S is the sign bit which is 0 for non-negatives and 1 for negatives.</p>
+
+<p>E is the exponent in biased notation with bias 127 (=2<sup>7</sup> - 1)</p>
+
+<p>M is the mantissa for normalized number with implicit leading 1.</p>
+
+<p>For example,&nbsp;</p>
+
+<p>2 = 1.000000 * 2^1 = 1.000000 * 2^(128-127)</p>
+
+<p>S: 0</p>
+
+<p>E: 128</p>
+
+<p>M: 0000000</p>
+
+<p>Thus, 2 = 0 10000000 00000000000000000000000</p>
+
+<p>3.0 * 2^10 = 1.5 * 2^11 = 1.1two * 2^(138-127)</p>
+
+<p>Thus, 3.0 * 2^10 = 0 10001010 10000000000000000000000</p>
+
+<h3>Short Quiz 1</h3>
+
+<p>Suppose we represent floating point numbers using 16-bits. It is the same as
+IEEE 754 standard except that we use 5-bits for biased representation of
+exponent and 10-bits for mantissa.</p>
+
+<p>S(1-bit) E(5-bits) M(10-bits)</p>
+
+<p>What is the largest value that can be represented with this notation?</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h3>Denormalized number</h3>
+
+<p><span lang="EN-US"> If we assume all numbers are normalized, then the smallest
+number greater than zero is&nbsp;</span></p>
+
+<p><span lang="EN-US"> 1.000000 * 2^(1-127) = 2^-126</span></p>
+
+<p><span lang="EN-US"> By allowing the numbers are not normalized, we can
+represent much smaller numbers</span></p>
+
+<p><span lang="EN-US"> 0.000000...01 * 2^(0-127) = 2^-22 * 2^-127 = 2^-149</span></p>
+
+<h3>Short Quiz 2</h3>
+
+<p>Assume the same format as in short quiz 1.&nbsp;</p>
+
+<p>What is the smallest value greater than zero that can be represented with
+normalization?</p>
+
+<p>&nbsp;</p>
+
+<p>What is the smallest value greater than zero without any normalizations?</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><span lang="EN-US"> Floating point number comparison</span></p>
+
+<p><span lang="EN-US">The point of using IEEE754 standard is that we can use
+integer comparison to compare two floating point numbers. To see the advantage
+of using biased notation let us look at the following floating point
+representation:</span></p>
+
+<p><span lang="EN-US">S(</span><span lang="EN-US">1-bit)E(8-bits)M(23-bits)</span></p>
+
+<p><span lang="EN-US">We assume that E is in two’s complement notation and
+the significant is the normalized notation with implicit leading one.</span></p>
+
+<p><span lang="EN-US">Suppose two integer registers $t0 and $t1 <span class="GramE">have</span> the floating point representation for two floating
+point numbers.</span></p>
+
+<p><span lang="EN-US">Then, we need three comparisons in worst case:(1) sign bits,
+(2) exponents and (3) mantissa</span></p>
+
+<h3>Short Quiz 3</h3>
+
+<p>How can you compare two floating point numbers in IEEE 754 format?</p>
+
+<p>Explain in one or two sentences.</p>
+
+<p>&nbsp;</p>
+
+<h3>Short Quiz 4</h3>
+
+<p>The following diagram explains how a program is made and then run in a
+machine.&nbsp; Fill in the blank which describes the specific components at each
+step.</p>
+
+<p>&nbsp;</p>
+
+<table border="0" width="100%" height="89">
+  <tbody><tr>
+    <td width="11%" height="39"></td>
+    <td width="11%" align="center" height="39">________</td>
+    <td width="11%" height="39"></td>
+    <td width="11%" align="center" height="39">________</td>
+    <td width="11%" height="39"></td>
+    <td width="11%" align="center" height="39">________</td>
+    <td width="11%" height="39"></td>
+    <td width="11%" align="center" height="39">________</td>
+    <td width="12%" height="39"></td>
+  </tr>
+  <tr>
+    <td width="11%" height="38">C program</td>
+    <td width="11%" align="center" height="38"><span style="mso-char-type: symbol; mso-symbol-font-family: Wingdings; font-family: Wingdings; mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman" lang="EN-US">à</span></td>
+    <td width="11%" height="38">Assembly Program</td>
+    <td width="11%" align="center" height="38"><span style="mso-char-type: symbol; mso-symbol-font-family: Wingdings; font-family: Wingdings; mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman" lang="EN-US">à</span></td>
+    <td width="11%" height="38">Object module</td>
+    <td width="11%" align="center" height="38"><span style="mso-char-type: symbol; mso-symbol-font-family: Wingdings; font-family: Wingdings; mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman" lang="EN-US">à</span></td>
+    <td width="11%" height="38">Executable Module</td>
+    <td width="11%" align="center" height="38"><span style="mso-char-type: symbol; mso-symbol-font-family: Wingdings; font-family: Wingdings; mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman" lang="EN-US">à</span></td>
+    <td width="12%" height="38">Running program</td>
+  </tr>
+</tbody></table>
+
+<h3>Short Quiz 5</h3>
+
+<p>The following sentences describe processing interrupts. But they are not in
+the right order. Right down the number to the left of each paragragh to process
+interrupts correctly.</p>
+
+<p>(&nbsp;&nbsp;&nbsp; ) Copies the value from EPC to the PC<br>
+(&nbsp;&nbsp;&nbsp; ) Checks Cause Register and jumps to portion of interrupt
+handler which handles the current exception<br>
+(&nbsp;&nbsp;&nbsp; ) PC is set to 0x80000080, process enters kernel mode, and
+interrupt handler code begins execution<br>
+(&nbsp;&nbsp;&nbsp; ) Copies PC into EPC and puts correct code into Cause
+Reg&nbsp;<br>
+(&nbsp;&nbsp;&nbsp; ) Calls instruction rfe (return from exception)</p>
+<h3>Short Quiz 6</h3>
+
+<p>What are the three ways of handling I/Os?</p>
+
+<p>&nbsp;</p>
+
+<p>Explain the situations where each of methods is preferrable to the others.</p>
+
+<h3>&nbsp;</h3>
+
+<p>&nbsp;</p>
+
+<h3>Short Quiz 7</h3>
+
+<p>Assume for a processor with a 1GHz clock it takes 800 clock cycles for a
+polling operation (call polling routine, accessing the device, and returning).
+Determine % of processor time for polling<br>
+keyboard when it is polled 20 times/sec.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h5><span lang="EN-US"><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion3.htm#top">Back to Top</a></span></h5>
+
+<div class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US">
+
+<hr size="2" width="100%" align="center">
+
+</span></div>
+
+<h5><span lang="EN-US">Revised<span class="GramE">: </span><!--webbot bot="TimeStamp" S-FORMAT="%m/%d/%y" S-TYPE="EDITED" startspan -->10/07/02<!--webbot bot="TimeStamp" endspan i-checksum="12573" -->.</span></h5>
+
+</div>
+
+
+
+
+</o:smarttagtype></o:smarttagtype></body></html>

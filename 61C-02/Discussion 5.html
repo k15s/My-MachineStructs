@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0055)http://www.cs.berkeley.edu/~jaein/cs61c/discussion5.htm -->
+<html><script type="text/javascript" src="chrome-extension://kajfghlhfkcocafkcjlajldicbikpgnp/catcher.js"><!-- script injected by Request Maker --></script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Discussion 5</title>
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta content="Microsoft FrontPage 4.0" name="GENERATOR">
+<meta content="FrontPage.Editor.Document" name="ProgId"><style type="text/css"></style></head>
+<body>
+<h2><a name="top">Discussion 5</a></h2>
+<p>9/24/02 Tue</p>
+<ol>
+  <li><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion3.htm#memory allocation"><strong>Procedure
+    calls in MIPS assembly</strong></a> 
+  </li><li><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion3.htm#introduction to structure"><strong>Bitwise
+    operations</strong></a> 
+</li></ol>
+<hr>
+
+<h3><a name="memory allocation">Procedure calls in MIPS assembly</a></h3>
+<h4>How can I call a procedure?</h4>
+<p>1) Copy the arguments (registers $a0, $a1, $a2, and $a3)</p>
+<p>2) Copy the return address onto the return address register ($ra) and jump to
+the procedure.</p>
+<p>3) Inside the procedure</p>
+<p>4) Access the return value (registers $v0, $v1)</p>
+<h4>How can I return a value from the procedure?</h4>
+<p>1) Copy the result onto the return value registers $v0 and $v1</p>
+<p>2) Jump to the return address using the return address register ($ra)</p>
+<h3>Example</h3>
+<pre>main() {
+	int i,j,k,m;	/* $s0, $s1, $s2, $s3 */
+	...
+	i = mult(j,k); ...
+	m = mult(i,i); ...
+}</pre>
+<pre>/* really dumb mult function */
+int mult (int mcand, int mlier){
+	int product;
+	product = 0;
+	while (mlier &gt; 0) {
+		product = product + mcand;
+		mlier = mlier -1;</pre>
+<pre>	}
+	return product;
+}</pre>
+<pre>-------------------------------------
+__start:</pre>
+<pre>	add $a0, $s1, $zero
+	add $a1, $s2, $zero
+	jal mult
+	add $s0, $v0, $zero</pre>
+<pre>	add $a0, $s0, $zero
+	add $a1, $s0, $zero
+	jal mult
+	add $s3, $v0, $zero</pre>
+<pre>	done</pre>
+<pre>mult:
+	add $t0, $zero, $zero
+	...
+	jr $ra</pre>
+<h4>Is this all about MIPS procedure call?</h4>
+<p>No. The example above is an extremely simple one. The caller (main) doesn't
+have a procedure which called it. And the callee (mult) doesn't make any
+procedure calls. In general, a procedure can be called from a procedure (it is
+considered the callee in this case) and it can also call other procedures (it is
+considered the caller in this case).&nbsp;</p>
+<p>No. The example above is extremely simple. <b>main</b> just ends the program
+without returning to another procedure and the <b>mult</b> doesn't make any
+procedure calls. In general, a procedure can be called from another procedure
+and can call other procedures. In that case, we need to save registers to
+prevent the registers from being hampered a procedure call.</p>
+<h4>Register conventions:</h4>
+<p>Registers can be categorized as follows.</p>
+<table border="1" width="100%">
+  <tbody><tr>
+    <td width="11%" align="center">Registers</td>
+    <td width="19%" align="center">Purposes</td>
+    <td width="12%" align="center">Save/Restore</td>
+    <td width="58%">Description</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">$sp</td>
+    <td width="19%" align="center">Stack pointer</td>
+    <td width="12%" align="center">Callee</td>
+    <td width="58%">Needs to be grown when some registers need to be
+      saved/restored.</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">$s0 - $s7</td>
+    <td width="19%" align="center">Local variables.</td>
+    <td width="12%" align="center">Callee</td>
+    <td width="58%">Need to be saved when the procedure modifies them.</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">$ra</td>
+    <td width="19%" align="center">Return address</td>
+    <td width="12%" align="center">Caller</td>
+    <td width="58%">Need to be saved when the procedure calls another procedure</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">$a0 - $a3</td>
+    <td width="19%" align="center">Arguments</td>
+    <td width="12%" align="center">Caller</td>
+    <td width="58%" rowspan="3">Need to be saved if they are used after a
+      procedure call.</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">$v0, $v1</td>
+    <td width="19%" align="center">Return values</td>
+    <td width="12%" align="center">Caller</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">$t0 - $t9</td>
+    <td width="19%" align="center">Temporary variables.</td>
+    <td width="12%" align="center">Caller</td>
+  </tr>
+</tbody></table>
+<h4>General procedure call conventions.</h4>
+<table border="1" cellpadding="2" width="100%">
+  <tbody><tr>
+    <td width="56%">
+<p>1) Grow the stack by subtracting the stack pointer ($sp) as much as the
+procedure needs (frame size).</p>
+<p>&nbsp;&nbsp;&nbsp; Save the registers the procedure should not change ($s0 -
+$s7 and $ra) using store instruction (sw).<br>
+      </p>
+    </td>
+    <td width="14%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="56%">
+<p>2) Do the operations (return values are copied onto $v0 and $v1).<br>
+      </p>
+    </td>
+    <td width="14%" rowspan="2">This can be repeated.</td>
+  </tr>
+  <tr>
+    <td width="56%">
+<p>3) Copy arguments onto registers $a0, $a1, $a2 and $a3.</p>
+<p>&nbsp;&nbsp;&nbsp; Save the registers ($t0 - $t9, $a0 - $a3) the procedure
+wants to preserve after call using store instruction.</p>
+<p>&nbsp;&nbsp;&nbsp; A procedure call</p>
+<p>&nbsp;&nbsp;&nbsp; Restore the registers ($t0 - $t9, $a0 - $a3) if necessary.<br>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td width="56%">
+<p>4) Restore the registers ($s0-$s7, $ra).</p>
+<p>&nbsp;&nbsp;&nbsp; Shrink the stack by adding the stack pointer with the
+frame size.</p>
+<p>&nbsp;&nbsp;&nbsp; Return using return address register ($ra).<br>
+      </p>
+    </td>
+    <td width="14%">&nbsp;</td>
+  </tr>
+</tbody></table>
+<h3>Example</h3>
+<pre>int fib(int n) {
+	if(n == 0) { return 1; }
+	if(n == 1) { return 1; }
+	return (fib(n - 1) + fib(n - 2));
+}
+</pre>
+<p>Is this called by another procedure?</p>
+<p>&nbsp;&nbsp;&nbsp; Yes.</p>
+<p>&nbsp;&nbsp;&nbsp; It needs to save
+the <b> local variables</b> it modifies.</p>
+<p>&nbsp;&nbsp;&nbsp; It needs to grow stack frame by subtracting <b>stack
+pointer</b>.</p>
+<p>Does this call other procedures?</p>
+<p>&nbsp;&nbsp;&nbsp; Yes.</p>
+<p>&nbsp;&nbsp;&nbsp; It needs to copy arguments and make a
+procedure call.&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; If necessary it needs to save <b>return address, arguments or temporary variables.</b></p>
+<p>Apply the general case conventions.</p>
+<table border="1" cellpadding="2" width="100%">
+  <tbody><tr>
+    <td width="50%">fib:<br>
+      addi $sp, $sp, -12<br>
+      sw $ra, 8($sp)<br>
+      sw $s0, 4($sp)</td>
+    <td width="50%">Step (1)<br>
+      Grows stack and saves the return address ($ra) and a local variable ($s0)
+      which will be modified within the procedure.</td>
+  </tr>
+  <tr>
+    <td width="50%">addi $v0, $zero, 1<br>
+      beq $a0, $zero, fin<br>
+      addi $t0, $zero, 1<br>
+      beq $a0, $t0, fin</td>
+    <td width="50%">Step (2)</td>
+  </tr>
+  <tr>
+    <td width="50%">addi $a0, $a0, -1<br>
+      sw $a0, 0($sp)<br>
+      jal fib<br>
+      lw $a0, 0($sp)</td>
+    <td width="50%">Step (3)<br>
+      Copy an arguement onto $a0. Saves and restores $a0 across the procedure
+      call to reuse $a0 later.</td>
+  </tr>
+  <tr>
+    <td width="50%">addi $a0, $a0, -1<br>
+      add $s0, $v0, $zero<br>
+      jal fib</td>
+    <td width="50%">Step (3)<br>
+      Copy an arguement onto $a0. Doesn't need to save arguments because the
+      arguments are not needed after the call.</td>
+  </tr>
+  <tr>
+    <td width="50%">add $v0, $v0, $s0</td>
+    <td width="50%">Step (2)</td>
+  </tr>
+  <tr>
+    <td width="50%">fin:<br>
+      lw $s0, 4($sp)<br>
+      lw $ra, 8($sp)<br>
+      addi $sp, $sp, 12<br>
+      jr $ra</td>
+    <td width="50%">Step (4)<br>
+      Restore the return address ($ra) and a local variable ($s0).<br>
+      Jump to the return address.</td>
+  </tr>
+</tbody></table>
+<h3>Example</h3>
+<pre>int sum(int n) {
+	if(n == 1) { return 1; }
+	return (n + sum(n - 1));
+}</pre>
+<p>Is this called by another function? Yes. It needs to save the return address
+and the local variables.</p>
+<p>Does it call other function? Yes, but it calls a procedure only once. Thus it
+doesn't need to save and restore arguments across the call.</p>
+<pre>sum:
+addi $sp, $sp, -8
+sw $ra, 4($sp)
+sw $s0, 0($sp)</pre>
+<pre>addi $v0, $zero, 1
+addi $t0, $zero, 1
+beq $a0, $t0, fin</pre>
+<pre>add $s0, $a0, $zero
+add $a0, $a0, -1
+jal sum
+add $v0, $v0, $s0</pre>
+<pre>fin:
+lw $ra, 4($sp)
+lw $s0, 0($sp)
+addi $sp, $sp, 8</pre>
+<h3><a name="introduction to structure">Bitwise operations</a></h3>
+<h4>What is bitwise operations?</h4>
+<p>The basic data operations in MIPS are done in 32-bit units. Bitwise
+operations allow us to access the data in smaller units.</p>
+<h4>AND (and, andi) operation</h4>
+<p>AND operation takes two operands (either two registers or one register and
+immediate value) and&nbsp; does logical AND operation for each bit. The Logical
+AND operation returns 1 when both bits are 1. Otherwise the operation returns 0.</p>
+<p>AND operation is used for masking. If we want to take the rightmost byte from
+4-byte word, we can AND a register with 0x000000ff.</p>
+<pre>addi $t0, $zero, $0xff    # set $t0 as 0x000000ff</pre>
+<pre>andi $t1, $t1, $t0        # and $t1 with 0x000000ff</pre>
+<p>The resulting value in register $t1 contains the rightmost byte of the
+original value.</p>
+<p>AND operation is also used to selectively clear a bit in a register.</p>
+<h4>OR (or, ori) operation</h4>
+<p>OR operation takes two operands (either two registers or one register and
+immediate value) and&nbsp; does logical OR operation for each bit. The Logical
+OR operation returns 1 when either of the bits are 1. Otherwise the operation returns 0.</p>
+<p>OR operation is used to selectively set a bit in a register.</p>
+<h4>Shift (sll, srl, sra) operation</h4>
+<p>Logical shift left (sll) operation shift the bits in a register to the left
+by shift amount and fills rightmost bits with zeros.</p>
+<p>Logical shift right (sll) operation shift the bits in a register to the right
+by shift amount and fills leftmost bits with zeros.&nbsp;</p>
+<p>Arithmetic shift right (sll) operation shift the bits in a register to the
+right by shift amount and fills leftmost bits with sign extending.&nbsp;</p>
+<h3>Example</h3>
+<p>MIPS has a coprocessor 0 to manage the processor states. Status register
+($12) of coprocessor 0 allows us enable or disable interrupts.</p>
+<table border="1" width="89%">
+  <tbody><tr>
+    <td width="20%">&nbsp;</td>
+    <td width="3%">15</td>
+    <td width="2%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="2%">8</td>
+    <td width="15%">&nbsp;</td>
+    <td width="8%">5</td>
+    <td width="8%">4</td>
+    <td width="8%">3</td>
+    <td width="8%">2</td>
+    <td width="8%">1</td>
+    <td width="8%">0</td>
+  </tr>
+  <tr>
+    <td width="20%">&nbsp;</td>
+    <td width="3%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="15%">&nbsp;</td>
+    <td width="8%">&nbsp;</td>
+    <td width="8%">&nbsp;</td>
+    <td width="8%">&nbsp;</td>
+    <td width="8%">&nbsp;</td>
+    <td width="8%">&nbsp;</td>
+    <td width="8%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="20%">&nbsp;</td>
+    <td width="17%" colspan="8">Interrupt mask</td>
+    <td width="15%">&nbsp;</td>
+    <td width="8%" colspan="2">Old</td>
+    <td width="8%" colspan="2">Previous</td>
+    <td width="8%" colspan="2">Current</td>
+  </tr>
+  <tr>
+    <td width="52%" colspan="10">&nbsp;</td>
+    <td width="8%"><font size="1">Kernel<br>
+      /user</font></td>
+    <td width="8%"><font size="1">Int&nbsp;<br>
+      enable</font></td>
+    <td width="8%"><font size="1">Kernel<br>
+      /user</font></td>
+    <td width="8%"><font size="1">Int&nbsp;<br>
+      enable</font></td>
+    <td width="8%"><font size="1">Kernel<br>
+      /user</font></td>
+    <td width="8%"><font size="1">Int&nbsp;<br>
+      enable</font></td>
+  </tr>
+</tbody></table>
+<p>To check whether the current interrupt is enabled,</p>
+<p>mfc0&nbsp;&nbsp;&nbsp; $k0, $12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # copy
+the status register to $k0</p>
+<p>andi&nbsp;&nbsp;&nbsp; $k0, $k0, 0x0001&nbsp;&nbsp;&nbsp; # $k0 is not zero
+if the current interrupt is enabled.</p>
+<p>To set a bit in the status register.</p>
+<p>ori&nbsp;&nbsp;&nbsp; $k0, $k0, 0x0001</p>
+<p>mtc0&nbsp;&nbsp;&nbsp; $k0, $12</p>
+<p>To clear a bit in the status register.</p>
+<p>andi&nbsp;&nbsp;&nbsp; $k0, $k0, 0xfffe</p>
+<p>mtc0&nbsp;&nbsp;&nbsp; $k0, $12</p>
+<h5><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion3.htm#top">Back 
+to Top</a></h5>
+<hr>
+
+<h5>Revised: <!--webbot bot="TimeStamp" S-FORMAT="%m/%d/%y" S-TYPE="EDITED" startspan -->09/24/02<!--webbot bot="TimeStamp" endspan i-CheckSum="12558" --> 
+.</h5>
+</body></html>

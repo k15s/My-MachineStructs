@@ -1,0 +1,302 @@
+
+<!-- saved from url=(0055)http://www.cs.berkeley.edu/~jaein/cs61c/discussion4.htm -->
+<html><script type="text/javascript" src="chrome-extension://kajfghlhfkcocafkcjlajldicbikpgnp/catcher.js"><!-- script injected by Request Maker --></script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Discussion 4</title>
+<style type="text/css"></style></head>
+
+<body>
+
+<h2><a name="top">Discussion 4</a></h2>
+<p>9/17/02 Tue</p>
+<hr>
+<h4>Storage</h4>
+<p>The variables in C are abstraction of storage where values can be assigned or
+read. In assembly there are two kinds of storage: register and memory. Register
+is fast storage that can be accessed for arithmetic directly, but has limited
+number of units depending on the architecture. For example, MIPS has 32
+registers. Memory allows to keep much larger storage space than registers, but
+cannot be used for arithmetic operations directly. In stead, data in the memory
+is loaded to the registers before the arithmetic operations. Variables have
+their associated types whereas there are no explicit types for registers and
+memory. The types are implied in the instruction -- an instruction uses word
+type or others uses double word.</p>
+<table border="1" width="100%">
+  <tbody><tr>
+    <td width="10%">
+      <p align="center">&nbsp;</p></td>
+    <td width="33%">
+      <p align="center">C</p></td>
+    <td width="34%">
+      <p align="center">Assembly</p></td>
+  </tr>
+  <tr>
+    <td width="10%">
+      <p align="center">Storage</p></td>
+    <td width="33%">
+      <p align="center">int i, n;<br>
+      int array[100];</p></td>
+    <td width="34%">
+      <p align="center">Register: $0, $1, ..., $31<br>
+      Memory: 0 ($s1)</p></td>
+  </tr>
+</tbody></table>
+<h4>Arithmetic operations and assignments</h4>
+<p>Arithmetic operations in MIPS assembly takes two source registers and one
+destination register with the following form:</p>
+<p>&lt;Opname&gt;&nbsp; &lt;dest_reg&gt; , &lt;source_reg1&gt; ,
+&lt;source_reg2&gt;&nbsp;</p>
+<p>For example,</p>
+<p>ADD $s1, $s2, $s3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # $s1: a, $s2: b,
+$s3: c,&nbsp;&nbsp; a = b + c</p>
+<p>When an expression has more than two arithmetic operations, then it can be
+calculated in multiple instructions possibly with temporary registers.</p>
+<p>For a = b + c - d,</p>
+<p>ADD $s1, $s2, $s3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # $s1: a, $s2: b,
+$s3: c, $s4: d</p>
+<p>SUB $s1, $s1, $s4</p>
+<p>For a = (b + c) - (d + e),</p>
+<p>ADD $s1, $s2, $s3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # $s1: a, $s2: b,
+$s3: c, $s4: d, $s5: e</p>
+<p>ADD $t1, $s4, $s5</p>
+<p>SUB $s1, $s1, $t1&nbsp;</p>
+<p>Register zero ($0) is hardwired to zero and has always zero value. And memory
+operations can be expressed with general operations by using register zero.</p>
+<p>For a = b,&nbsp;&nbsp;&nbsp; ADD $s1, $s2, $0&nbsp;&nbsp;&nbsp;</p>
+<p>For a = -b,&nbsp;&nbsp;&nbsp; SUB $s1, $0, $s2</p>
+<p>Instructions that try to modify register zero do nothing because the register
+zero cannot be modified.</p>
+<p>ADD $0, $s1, $0</p>
+<h4>Load and store instructions</h4>
+<p>&lt;Opname&gt;&nbsp; &lt;reg1&gt; , &lt;offset&gt; ( &lt;reg2&gt; )</p>
+<p>LW $s1, 4 ($s2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # load a word to
+$s1 from the source memory. The source memory is 4-bytes after the location $s2
+points to.</p>
+<p>SW $s1, 4 ($s2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # store a word from
+$s1 to the memory which is 4-bytes after the location $s2 points to.</p>
+<h4>Immediate value</h4>
+<p>An immediate value is a constant that is embedded in an instruction. This
+allows simple integer values can be used for operations without load.</p>
+<p>ADDI $s1, $s2, 1&nbsp;&nbsp;&nbsp; # a = b + 1</p>
+<h4>Shift operations</h4>
+<p>SLL $s1, $s2, 4:&nbsp;&nbsp;&nbsp; shift the value in the register $s2 four
+bits to the left and write it to the register $s1. This multiplies $s2 with 16.</p>
+<p>SRL $s1, $s2, 2:&nbsp;&nbsp;&nbsp; shift the value in the register $s2 two
+bits to the right and write it to the register $s1. This divides $s2 by 4.</p>
+<p>Shift operations substitutes multiplication and division when an operand is a
+power of two (2, 4, 8, etc) and faster.</p>
+<p>&nbsp;</p>
+<h4>Branch operations</h4>
+<p>Can we write any programs with assembly with the instructions we learned? We
+need control flow instructions to implement a branch and a loop.</p>
+<p>In C, there are several control flow instructions, but all of them can be
+expressed using if and goto. In MIPS assembly, there are conditional branches (beq/bne)
+and an unconditional jump&nbsp; ( j ).</p>
+<table border="1" width="100%" height="174">
+  <tbody><tr>
+    <td width="15%" align="center" height="19"></td>
+    <td width="33%" align="center" height="19">Original constructs</td>
+    <td width="30%" align="center" height="19">Using only if and goto</td>
+    <td width="30%" align="center" height="19">Assembly</td>
+  </tr>
+  <tr>
+    <td width="15%" align="center" height="18">if</td>
+    <td width="33%" align="left" height="18"><font face="Courier">&nbsp;&nbsp;
+      if (a == b)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = y + z;&nbsp;</font></td>
+    <td width="30%" align="left" height="18"><font face="Courier">&nbsp;&nbsp;
+      if (a != b) goto L1;<br>
+      &nbsp;&nbsp; x = y + z;<br>
+      L1:</font></td>
+    <td width="30%" align="left" height="18"><font face="Courier">&nbsp;&nbsp;
+      BNE $s1, $s2, L1<br>
+      &nbsp;&nbsp; ADD $t1, $t2, $t3<br>
+      L1:</font></td>
+  </tr>
+  <tr>
+    <td width="15%" align="center" height="19">if else</td>
+    <td width="33%" align="left" height="19"><font face="Courier">&nbsp;&nbsp;
+      if (a == b)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = y + z;&nbsp;<br>
+      &nbsp;&nbsp; else<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = y - z;</font></td>
+    <td width="30%" align="left" height="19"><font face="Courier">&nbsp;&nbsp;
+      if (a != b) goto L1;<br>
+      &nbsp;&nbsp; x = y + z;<br>
+      &nbsp;&nbsp; goto L2;<br>
+      L1:x = y - z;<br>
+      L2:</font></td>
+    <td width="30%" align="left" height="19"><font face="Courier">&nbsp;&nbsp;
+      BNE $s1, $s2, L1<br>
+      &nbsp;&nbsp; ADD $t1, $t2, $t3<br>
+      &nbsp;&nbsp; J&nbsp;&nbsp; L2<br>
+      L1:SUB $t1, $t2, $t3<br>
+      L2:</font></td>
+  </tr>
+  <tr>
+    <td width="15%" align="center" height="19">if else if else</td>
+    <td width="33%" align="left" height="19"><font face="Courier">&nbsp;&nbsp;
+      if (a == b)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = y + z;&nbsp;<br>
+      &nbsp;&nbsp; else if (c == d)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = y - z;<br>
+      &nbsp;&nbsp; else<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = y + 1;</font></td>
+    <td width="30%" align="left" height="19"><font face="Courier">&nbsp;&nbsp;
+      if (a != b) goto L1;<br>
+      &nbsp;&nbsp; x = y + z;<br>
+      &nbsp;&nbsp; goto L3;<br>
+      L1:if (c != d) goto L2;<br>
+      &nbsp;&nbsp; x = y - z;<br>
+      &nbsp;&nbsp; goto L3;<br>
+      L2:x = y + 1;<br>
+      L3:</font></td>
+    <td width="30%" align="left" height="19"><font face="Courier">&nbsp;&nbsp;
+      BNE $s1, $s2, L1<br>
+      &nbsp;&nbsp; ADD $t1, $t2, $t3<br>
+      &nbsp;&nbsp; J&nbsp;&nbsp; L3<br>
+      L1:BNE $s3, $s4, L2<br>
+      &nbsp;&nbsp; SUB $t1, $t2, $t3<br>
+      &nbsp;&nbsp; J&nbsp;&nbsp; L3<br>
+      L2:ADDI $t1, $t2, 1<br>
+      L3:</font></td>
+  </tr>
+  <tr>
+    <td width="15%" align="center" height="19">do while</td>
+    <td width="33%" align="left" height="19"><font face="Courier">&nbsp;&nbsp;
+      do<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a = a - 1;<br>
+      &nbsp;&nbsp; while (a != 0);</font></td>
+    <td width="30%" align="left" height="19"><font face="Courier">L1:a = a - 1;<br>
+      &nbsp;&nbsp; if (a != 0) goto L1;</font></td>
+    <td width="30%" align="left" height="19"><font face="Courier">L1:ADDI $s1,
+      $s1, -1<br>
+      &nbsp;&nbsp; BNE&nbsp; $s1, $0, L1</font></td>
+  </tr>
+  <tr>
+    <td width="15%" align="center" height="19">while</td>
+    <td width="33%" align="left" height="19"><font face="Courier">&nbsp;&nbsp;
+      while (a != 0)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a = a - 1;&nbsp;</font></td>
+    <td width="30%" align="left" height="19"><font face="Courier">L1:if (a == 0)
+      goto L2;<br>
+      &nbsp;&nbsp; a = a - 1;<br>
+      &nbsp;&nbsp; if (a != 0) goto L1;<br>
+      L2:</font></td>
+    <td width="30%" align="left" height="19"><font face="Courier">L1:BEQ&nbsp;
+      $s1, $0, L2<br>
+      &nbsp;&nbsp; ADDI $s1, $s1, -1<br>
+      &nbsp;&nbsp; BNE&nbsp; Ss1, $0, L1<br>
+      L2:</font></td>
+  </tr>
+</tbody></table>
+<p>What if we need to evaluate inequality such as &lt;, &gt;, &lt;= or &gt;=?</p>
+<p>We can use SLT.&nbsp;</p>
+<p>SLT $t1, $s1, $s2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # $t1 is set to 1
+if $s1 &lt; $s2. Otherwise it is set to zero.</p>
+<table border="1" width="100%" height="171">
+  <tbody><tr>
+    <td width="15%" align="center" height="19"></td>
+    <td width="33%" align="center" height="19">Original constructs</td>
+    <td width="30%" align="center" height="19">Assembly</td>
+  </tr>
+  <tr>
+    <td width="15%" align="center" height="18">==</td>
+    <td width="33%" align="left" height="18"><font face="Courier">&nbsp;&nbsp;
+      if (a == b)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = y + z;&nbsp;</font></td>
+    <td width="30%" align="left" height="18"><font face="Courier">&nbsp;&nbsp;
+      BNE $s1, $s2, L1<br>
+      &nbsp;&nbsp; ADD $t1, $t2, $t3<br>
+      L1:</font></td>
+  </tr>
+  <tr>
+    <td width="15%" align="center" height="19">!=</td>
+    <td width="33%" align="left" height="19"><font face="Courier">&nbsp;&nbsp;
+      if (a </font>!<font face="Courier">= b)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = y + z;&nbsp;</font></td>
+    <td width="30%" align="left" height="19"><font face="Courier">&nbsp;&nbsp;
+      BEQ $s1, $s2, L1<br>
+      &nbsp;&nbsp; ADD $t1, $t2, $t3<br>
+      L1:</font></td>
+  </tr>
+  <tr>
+    <td width="15%" align="center" height="16">&lt;</td>
+    <td width="33%" align="left" height="16"><font face="Courier">&nbsp;&nbsp;
+      if (a &lt; b)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = y + z;&nbsp;</font></td>
+    <td width="30%" align="left" height="16"><font face="Courier">&nbsp;&nbsp;
+      SLT $t4, $s1, $s2<br>
+      &nbsp;&nbsp; BEQ $t4, $0, L1<br>
+      &nbsp;&nbsp; ADD $t1, $t2, $t3<br>
+      L1:</font></td>
+  </tr>
+  <tr>
+    <td width="15%" align="center" height="19">&lt;=</td>
+    <td width="33%" align="left" height="19"><font face="Courier">&nbsp;&nbsp;
+      if (a &lt;= b)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = y + z;&nbsp;</font></td>
+    <td width="30%" align="left" height="19"><font face="Courier">&nbsp;&nbsp;
+      SLT $t4, $s2, $s1<br>
+      &nbsp;&nbsp; BNE $t4, $0, L1<br>
+      &nbsp;&nbsp; ADD $t1, $t2, $t3<br>
+      L1:</font></td>
+  </tr>
+</tbody></table>
+<h3>Short quiz</h3>
+<h4>The following program finds the sum of A[0], A[1], A[2] and A[100]. Complete
+an assembly code that does the same.</h4>
+<pre>int A[100];</pre>
+<pre>int main(void)
+{
+	int i, sum;
+	fill_the_array(A, 100);
+
+	sum = 0;
+	i = 100;
+	do {
+		i = i - 1;
+		sum += A[i];
+	} while (i != 0);
+	/* The sum is in 'sum' */</pre>
+<pre>}
+</pre>
+<pre>Intermediate C code</pre>
+<pre>int A[100];</pre>
+<pre>int main(void)
+{
+	int i, sum;
+	fill_the_array(A, 100);
+
+	sum = 0;		/* sum: $s1 */
+	i = 100;		/* i: $s2 */
+L1:	i = i - 1;
+	sum += A[i];		/* A: $s3 */
+	if (i != 0) goto L1;
+	/* The sum is in 'sum' */</pre>
+<pre>}
+</pre>
+<pre>Assembly code</pre>
+<pre>	ADD $s1, $0, $0
+	ADDI $s2, $0, 100
+	ADDI $s3, $s3, 400
+L1:	ADDI $s2, $s2, -1</pre>
+<pre>        ___________________
+
+	LW $t1, 0 ($s3)
+	ADD $s1, $s1, $t1</pre>
+<pre>	___________________
+
+</pre>
+<h5><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion4.htm#top">Back to Top</a></h5>
+<hr>
+<h5>Revised: <!--webbot bot="TimeStamp" S-FORMAT="%m/%d/%y" S-TYPE="EDITED" startspan -->09/15/02<!--webbot bot="TimeStamp" endspan i-CheckSum="12566" -->
+.</h5>
+
+
+
+
+</body></html>

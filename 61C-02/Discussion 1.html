@@ -1,0 +1,143 @@
+
+<!-- saved from url=(0055)http://www.cs.berkeley.edu/~jaein/cs61c/discussion1.htm -->
+<html><script type="text/javascript" src="chrome-extension://kajfghlhfkcocafkcjlajldicbikpgnp/catcher.js"><!-- script injected by Request Maker --></script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Discussion 1</title>
+<style type="text/css"></style></head>
+
+<body>
+
+<h2><a name="top">Discussion 1</a></h2>
+<p>8/27/02 Tue</p>
+<ol>
+  <li><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion1.htm#difference"><strong>Differences of C and Java</strong></a></li>
+  <li><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion1.htm#numbers"><strong>Numbers</strong></a></li>
+</ol>
+<hr>
+<h3><a name="difference">Differences of C and Java</a></h3>
+<h4>Variables must be declared at the beginning of a block code.</h4>
+<p>Java</p>
+<pre>public class decl {
+        public static void main(String[] arg) {
+                int x = 0;
+                x++;
+                int y = x + 1;
+                System.out.println("x = " + Integer.toString(x) + ", y = " + 
+                                        Integer.toString(y));
+        }
+}</pre>
+<p>C</p>
+<pre>int main()
+{
+        int x = 0;
+        x++;
+        int y = x + 1;
+        printf("x = %d, y = %d\n", x, y);</pre>
+<pre>        return 0;
+}</pre>
+<pre>This code generates the following error message.</pre>
+<pre>&gt; !gcc
+gcc -o decl decl.c
+decl.c: In function `main':
+decl.c:6: parse error before `int'
+decl.c:7: `y' undeclared (first use in this function)
+decl.c:7: (Each undeclared identifier is reported only once
+decl.c:7: for each function it appears in.)</pre>
+<pre>Correction:</pre>
+<pre>int main()
+{
+        int x = 0;
+        int y;
+        x++;
+        y = x + 1;
+        printf("x = %d, y = %d\n", x, y);</pre>
+<pre>        return 0;
+}</pre>
+<h4>No run-time checks for uninitialized variables, array bounds, etc.</h4>
+<pre>Java</pre>
+<pre>public class decl1 {
+        public static void main(String[] arg) {
+                int x;
+                System.out.println("x = " + Integer.toString(x));
+        }
+}
+</pre>
+<pre>This generates the following compile error message:</pre>
+<pre>javac decl1.java
+decl1.java:4: Variable x may not have been initialized.
+                System.out.println("x = " + Integer.toString(x));</pre>
+<pre>C</pre>
+<pre>int main()
+{
+        int x;
+        printf("x = %d\n", x);
+
+        return 0;
+}
+
+This C doesn't generate any error message.</pre>
+<pre>If we execute the code:</pre>
+<pre>&gt; ./decl1
+x = -4261020
+</pre>
+<pre>Uninitialized values are used!</pre>
+<pre>Java</pre>
+<pre>public class decl2 {
+        public static void main(String[] arg) {
+                int a[] = { 0, 1, 2, 3, 4};
+                System.out.println("a[5] = " + Integer.toString(a[5]));
+        }
+}
+
+Run-time error check</pre>
+<pre>java.lang.ArrayIndexOutOfBoundsException: 5
+        at decl2.main(decl2.java:4)
+</pre>
+<pre>C
+
+int main()
+{
+        int a[] = {0, 1, 2, 3, 4};
+        printf("a[5] = %d\n", a[5]);
+
+        return 0;
+}
+</pre>
+<pre>If we execute the code above:</pre>
+<pre>&gt; ./decl2
+a[5] = -4261020
+</pre>
+<pre>Uninitialized values are used!</pre>
+<pre>&nbsp;</pre>
+<h5><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion1.htm#top">Back to Top</a></h5>
+<hr>
+<h3><a name="numbers">Numbers</a></h3>
+<p>Why we learn numbers?</p>
+<p>Everything is represented in numbers in a computer:</p>
+<p>Name a few things that are represented in numbers</p>
+<p>Characters</p>
+<p>&nbsp;</p>
+<p>Base Conversion&nbsp;</p>
+<p>1011 1101 0110 (binary) = ? (hex) = ? (dec)</p>
+<p>10101 (binary) = 0001 0101 (binary) = ? (hex) = ? (dec)</p>
+<p>4E5 (hex) = ? (binary) = ? (dec)</p>
+<p>Negative number representation</p>
+<p>For -7 (dec),</p>
+<p>-111 (sign and magnitude)</p>
+<p>1000 (1's complement assuming the numbers are in 4-bit)</p>
+<p>1001 (2's complement assuming the numbers are in 4-bit)</p>
+<p>2's complement is the representation of negative numbers in a computer. This
+is because the same hardware can be used both for positive and negative numbers.</p>
+<p>&nbsp;</p>
+<h5><a href="http://www.cs.berkeley.edu/~jaein/cs61c/discussion1.htm#top">Back to Top</a></h5>
+<hr>
+<h5>Revised: <!--webbot bot="TimeStamp" S-FORMAT="%m/%d/%y" S-TYPE="EDITED" startspan -->08/27/02<!--webbot bot="TimeStamp" endspan i-checksum="12604" -->
+.</h5>
+
+
+
+
+</body></html>
